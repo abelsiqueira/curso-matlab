@@ -131,10 +131,10 @@ Essa fun\c{c}\~ao simplesmente calcula a fun\c{c}\~ao passada em {\tt <nome\_da\
 \frametitle {Fun\c{c}\~oes como Argumentos}
 
 Por exemplo, podemos usar a fun\c{c}\~ao para calcular a exponencial de um n\'umero:
-\pause 
+\pause
 \begin{verbatim}
 >> f = feval(`exp',5);
-f = 
+f =
      x
 \end{verbatim}
 \pause
@@ -272,7 +272,7 @@ x =
 k =
      8
 >> [x,k] = metodo_newton(`sin',`cos',x)
-x = 
+x =
   2.9236e-013
 k =
      4
@@ -364,19 +364,19 @@ Veja a nossa rotina do m\'etodo de Newton com Function Handle:
 >> [x,k] = metodo_newton(@(x) x^2-1, @(x) 2*x, 10)
 x =
      1
-k = 
+k =
      8
 >> f = @(x,n) x^2-n^2;
 >> g = @(x) 2*x
 >> [x,k] = metodo_newton(@(x) f(x,1), g, 10)
 x =
      1
-k = 
+k =
      8
 >> [x,k] = metodo_newton(@(x) f(x,3), @(x) 2*x, 10)
 x =
      3
-k = 
+k =
      6
 \end{verbatim}
 }

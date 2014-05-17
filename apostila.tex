@@ -24,8 +24,8 @@
 \vspace{3 cm}
 }
 \author{
-\bf \sffamily \Large Abel Soares Siqueira (abel.s.siqueira@gmail.com) \\ 
-\bf \Large \sffamily  Kally Chung (chung.kally@gmail.com) \\ 
+\bf \sffamily \Large Abel Soares Siqueira (abel.s.siqueira@gmail.com) \\
+\bf \Large \sffamily  Kally Chung (chung.kally@gmail.com) \\
 }
 \date{\bf \sffamily \large \today}
 
@@ -57,7 +57,7 @@ O elemento b\'asico deste programa \'e uma matriz que n\~ao requer dimensionamen
 
 O Matlab foi desenvolvido inicialmente em C, por\'em hoje ele possui subrotinas em C, Fortran e Java, que s\~ao linguagens muito utilizadas, para que o usu\'ario n\~ao estranhasse a linguagem de programa\c{c}\~ao do Matlab.
 
-Nesta apostila, queremos apresentar as fun\c{c}\~oes b\'asicas que funcionam em qualquer vers\~ao de Matlab, por\'em algumas mensagens de erro e de alerta podem ser diferentes por voc\^e estar trabalhando numa vers\~ao diferente ou numa plataforma diferente. 
+Nesta apostila, queremos apresentar as fun\c{c}\~oes b\'asicas que funcionam em qualquer vers\~ao de Matlab, por\'em algumas mensagens de erro e de alerta podem ser diferentes por voc\^e estar trabalhando numa vers\~ao diferente ou numa plataforma diferente.
 
 Como j\'a fizemos uma breve introdu\c{c}\~ao sobre como o Matlab funciona, como ele chegou at\'e voc\^e, esperamos que voc\^e fa\c{c}a bom proveito da apostila, do curso e explore todos os recursos que o Matlab te oferece.
 
@@ -72,21 +72,21 @@ Kally Chung
 
 \section{\'Area de Trabalho do Matlab}
 	Ao executar o Matlab, a Figura \ref{fig:area_trab_dest} fornece sua visualiza\c{c}\~ao padr\~ao. As partes destacadas correspondem, respectivamente, a \textit{(1)Janela de Comando}, \textit{(2)Hist\'orico de Comando}, \textit{(3)Espa\c{c}o de Trabalho} e \textit{(4)Diret\'orio Atual}, cujas aplica\c{c}\~oes s\~ao descritas na lista abaixo:
-	
+
 \begin{enumerate}
 	\item \textit{Janela de Comando}: Principal local de intera\c{c}\~ao do usu\'ario com o Matlab porque \'e onde escrevemos os comandos, ap\'os o prompt {\tt >>}, para o Matlab executar. Quando o cursor \`a direita do prompt {\tt >>} ficar piscando, isso quer dizer que o Matlab est\'a esperando seu comando para execut\'a-lo.
 	\item \textit{Hist\'orico de Comando}: Local de armazenamento dos comandos executados anteriormente na \textit{Janela de Comando}.
 	\item \textit{Espa\c{c}o de Trabalho}: Apresenta\c{c}\~ao da lista das vari\'aveis criadas na sess\~ao atual de trabalho no MatLab.
 	\item \textit{Diret\'orio Atual}: Respons\'avel pela manipula\c{c}\~ao dos diret\'orios e arquivos no Matlab.
 \end{enumerate}
-	
+
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.5]{figura2.jpg}
 \caption{Visualiza\c{c}\~ao da \'area de trabalho do Matlab.}
 \label{fig:area_trab_dest}
 \end{figure}
-	
+
 	Como dito anteriormente, essa \'e uma \'area de trabalho padr\~ao uma vez que sua altera\c{c}\~ao \'e poss\'{\i}vel atrav\'es do menu superior {\tt Desktop}.
 
 \newpage
@@ -94,19 +94,19 @@ Kally Chung
 \section{Inser\c{c}\~ao de Elementos B\'asicos}
 	Neste cap\'{\i}tulo, trabalharemos somente na \textit{Janela de Comando} mostrando como inserir constantes, as quais incluem escalares, strings e n\'umeros complexos, e apresentando algumas fun\c{c}\~oes b\'asicas.
 
-\subsection{Constantes}	
-	
+\subsection{Constantes}
+
 	Ao inserir uma constante ap\'os o prompt {\tt >>}, o Matlab ir\'a guard\'a-la na vari\'avel {\tt ans} e devolver\'a o resultado ap\'os a express\~ao {\tt ans =}. Note que logo ap\'os a execu\c{c}\~ao do comando, o \textit{Hist\'orico de Comando} j\'a \'e atualizado e a vari\'avel {\tt ans} aparece na lista de vari\'aveis do \textit{Espa\c{c}o de Trabalho}.
-	
+
 	Vejamos os exemplos abaixos sobre como introduzir escalar, string e n\'umeros complexos, respectivamente:
-	
+
 \begin{verbatim}
 >> 14
 ans =
     14
 >> 5.27e-1
 ans =
-  5.2700e-001  
+  5.2700e-001
 >> `Matlab'
 ans =
 Matlab
@@ -115,20 +115,20 @@ ans =
    8.0000 - 2.0000i
 >> 8 - 2j
 ans =
-   8.0000 - 2.0000i   
+   8.0000 - 2.0000i
 >> ans
 ans =
-   8.0000 - 2.0000i 
-\end{verbatim}	
+   8.0000 - 2.0000i
+\end{verbatim}
 
 	Ao saber qual valor que {\tt ans} armazena, \'e s\'o cham\'a-la. Vemos, no exemplo, que ela armazena a \'ultima constante inserida.
 
 	Para introduzir uma string, basta escrever a palavra desejada entre aspas simples. J\'a para inserir um n\'umero complexo, a parte imagin\'aria pode ser acompanhada tanto de {\tt i} ou {\tt j}.
 
-\subsection{Vari\'aveis}	
+\subsection{Vari\'aveis}
 
 	Ao solicitar ao Matlab que guarde o resultado numa vari\'avel espec\'{\i}fica, j\'a n\~ao aparecer\'a {\tt ans} e, sim, o nome da vari\'avel especificada. A atualiza\c{c}\~ao tanto no \textit{Hist\'orico de Comandos} e no \textit{Espa\c{c}o de Trabalho} tamb\'em ocorrem.
-	
+
 \begin{verbatim}
 >> total = 5+7*23
 total =
@@ -142,21 +142,21 @@ palavra =
 >> total_complexo = 4 + 3i + 0.7 + sin(0.5)*i
 total_complexo =
    4.7000 + 3.4794i
-\end{verbatim}		
+\end{verbatim}
 
 \subsubsection{Regras para Trabalhar com as Vari\'aveis}
 	Como estamos armazenando os dados em vari\'aveis, existem regras que devemos saber e obedecer.
 
-\begin{enumerate}	
+\begin{enumerate}
 	\item As vari\'aveis distinguem letras mai\'usculas e min\'usculas. Por exemplo, as vari\'aveis {\tt Resultado, resultado, ReSuLtAdO} s\~ao diferentes para o Matlab.
 	\item As vari\'aveis podem conter at\'e 31 caracteres que englobam letras, algarismos e sublinhados, portanto, caracteres de pontua\c{c}\~ao n\~ao s\~ao admitidos. Os nomes {\tt \$Resultado, Resul\$tado} n\~ao s\~ao aceitos como vari\'avel.
 	\item O primeiro caractere de uma vari\'avel tem que ser letra. Nomes como {\tt 4resultado, \_resultado\_} n\~ao s\~ao admitidos como vari\'aveis.
 	\item As vari\'aveis n\~ao podem pertencer ao conjunto das vari\'aveis reservadas pelo Matlab, o qual est\'a detalhado na Tabela \ref{tab:lista_reservadas}.
 \end{enumerate}
-	
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|c|c|c|c|c|} \hline	
+\begin{tabular}{|c|c|c|c|c|c|} \hline
 {\tt for}    & {\tt end}   & {\tt if}        & {\tt while}      & {\tt function} & {\tt return} \\ \hline
 {\tt elseif} & {\tt case}  & {\tt otherwise} & {\tt switch}     & {\tt continue} & {\tt else}   \\ \hline
 {\tt try}    & {\tt catch} & {\tt global}    & {\tt persistent} & {\tt break}    &        \\ \hline
@@ -167,10 +167,10 @@ total_complexo =
 
 \subsubsection{Vari\'aveis Pr\'e-Determinadas}
 	A Tabela \ref{tab:lista_predef} apresenta algumas vari\'aveis pr\'e-determinadas. Embora sejam vari\'aveis pr\'e-determinadas, os nomes dessas vari\'aveis podem ser usados para armazenar outros valores.
-	
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|l|} \hline	
+\begin{tabular}{|c|l|} \hline
 \textbf{Vari\'avel}   & \textbf{Descri\c{c}\~ao} \\ \hline
 {\tt pi}     & Valor de $\pi = 3.14159265358979...$ \\ \hline
 {\tt inf}    & Valor de $\infty$, que representa o Infinito.   \\ \hline
@@ -180,8 +180,8 @@ total_complexo =
 \caption{Vari\'aveis pr\'e-determinadas pelo Matlab.}
 \label{tab:lista_predef}
 \end{table}
-	
-\subsubsection{Oculta\c{c}\~ao das Solu\c{c}\~oes}	
+
+\subsubsection{Oculta\c{c}\~ao das Solu\c{c}\~oes}
 	Voc\^e j\'a deve ter notado que ao digitar o comando, o Matlab executa e imprime o resultado. Entretanto, ao colocar ponto-e-v\'{\i}rgula no final do comando, o Matlab o executar\'a e n\~ao imprimir\'a o resultado. No exemplo abaixo, observe que a presen\c{c}a do ponto-e-v\'{\i}rgula nos 2 primeiros comandos oculta os resultados, que podem ser visualizados ao chamar a vari\'avel no prompt {\tt >>}.
 
 \begin{verbatim}
@@ -197,7 +197,7 @@ valor =
 
 \subsubsection{Uni\~ao de Comandos na \textit{Janela de Comando}}
 	Podemos tamb\'em unir dois comandos por v\'{\i}rgula ou por ponto-e-v\'{\i}rgula. A v\'{\i}rgula, ao final do comando, n\~ao ocultar\'a o resultado, j\'a o ponto-e-v\'{\i}rgula, sim.
-	
+
 	Caso seu comando seja t\~ao longo que o apropriado seja quebr\'a-lo e continuar na linha seguinte, ent\~ao use retic\^encias (...) entre nomes de vari\'aveis e operadores matem\'aticos, e n\~ao no meio de vari\'aveis. Considere os exemplos abaixo:
 
 \begin{verbatim}
@@ -223,10 +223,10 @@ Error: Missing Matlab operator.
 \subsubsection{Comandos para Ministrar as Vari\'aveis}
 
 	Existem comandos, os quais est\~ao listados na Tabela \ref{tab:lista_funcao_variaveis}, que nos auxiliam a administrar as vari\'aveis. Logo em seguida, alguns exemplos est\~ao expostos.
-	
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|c|l|} \hline	
+\begin{tabular}{|c|l|} \hline
 \textbf{Comando}   & \textbf{Descri\c{c}\~ao} \\ \hline
 {\tt who}     & Lista das vari\'aveis existentes no Espa\c{c}o de Trabalho. \\ \hline
 {\tt whos}    & Lista das vari\'aveis existentes, de suas dimens\~oes e seus tipos no Esp. de Trabalho. \\ \hline
@@ -239,7 +239,7 @@ Error: Missing Matlab operator.
 \begin{verbatim}
 >> who
 Your variables are:
-A       B       C       M       c1      c2      c3      total   valor   valor2  
+A       B       C       M       c1      c2      c3      total   valor   valor2
 >> whos
   Name         Size                    Bytes  Class
   A            4x2                        64  double array
@@ -256,22 +256,22 @@ Grand total is 40 elements using 344 bytes
 >> clear c1
 >> who
 Your variables are:
-A       B       C       M       c2      c3      total   valor   valor2  
+A       B       C       M       c2      c3      total   valor   valor2
 >> clear M total
 >> who
 Your variables are:
-A       B       C       c2      c3      valor   valor2 
+A       B       C       c2      c3      valor   valor2
 >> clear		%apagando todas as variaveis
 >> who			%jah nao aparece lista porque todas variaveis foram apagadas
 \end{verbatim}
 
 	Observe no exemplo que para apagar algumas vari\'aveis, basta list\'a-las ap\'os o comando clear. Por\'em para apagar todas as vari\'aveis, \'e s\'o usar o comando clear.
-	
+
 \subsection{Coment\'arios}
 	Qualquer texto seguido do sinal de porcentagem torna-se um coment\'ario. Este n\~ao pode ser interrompido como se fosse um comando, logo, escreva o coment\'ario e caso este fique longo, quebre-o e continue a frase na linha seguinte, ap\'os digitar o sinal de porcentagem.
-	
+
 	No exemplo abaixo, o primeiro e o \'ultimo comando n\~ao geram erros, enquanto que os do meio geram porque o coment\'ario foi quebrado de forma errada, mesmo com o ``aux\'{\i}lio" das retic\^entias, que n\~ao funciona como ``continuador de comandos" porque o Matlab entende que elas fazem parte do coment\'ario j\'a que elas pertencem ao texto depois do sinal de porcentagem.
-	
+
 \begin{verbatim}
 >> valor1 = 5.4; valor2 = 9.3;
 >> total = valor2/valor1 %esse comando nao foi quebrado, nem o comentario
@@ -291,16 +291,16 @@ total =
 total =
     1.7222
 >> %o comentario sim
-\end{verbatim}	
+\end{verbatim}
 
 \newpage
 
 \section{Visualiza\c{c}\~ao dos N\'umeros}
 	Voc\^e deve ter notado que, at\'e agora, os resultados num\'ericos possuem 4 d\'{\i}gitos decimais. No entanto, essa formata\c{c}\~ao \'e alter\'avel. Veja outros formatos que o Matlab disponibiliza:
-	
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|} \hline	
+\begin{tabular}{|l|l|} \hline
 \textbf{Comando}     & \textbf{Descri\c{c}\~ao} \\ \hline
 {\tt format short}   & 5 d\'{\i}gitos, com 4 d\'{\i}gitos decimais. \\ \hline
 {\tt format long}    & 16 d\'{\i}gitos, com 15 d\'{\i}gitos decimais.   \\ \hline
@@ -318,7 +318,7 @@ total =
 >> valor1 = 5.4; valor2 = 9.3;
 >> total = valor2/valor1
 total =
-    1.7222  
+    1.7222
 >> format short
 >> total
 total =
@@ -358,7 +358,7 @@ total =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|} \hline
-\textbf{Comando} & \textbf{Descri\c{c}\~ao} & \textbf{Exemplo}    \\ \hline 
+\textbf{Comando} & \textbf{Descri\c{c}\~ao} & \textbf{Exemplo}    \\ \hline
 {\tt +}          & Adi\c{c}\~ao.         		& {\tt >> 43 + 4}  \\ \hline
 {\tt -}          & Subtra\c{c}\~ao.     		& {\tt >> 43 - 4}  \\ \hline
 {\tt *}          & Multiplica\c{c}\~ao. 		& {\tt >> 43 * 4}  \\ \hline
@@ -374,7 +374,7 @@ total =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|} \hline
-\textbf{Comando}     & \textbf{Descri\c{c}\~ao}     & \textbf{Exemplo}    \\ \hline 
+\textbf{Comando}     & \textbf{Descri\c{c}\~ao}     & \textbf{Exemplo}    \\ \hline
 {\tt sin}            & Seno.												& {\tt >> sin(pi/4)}  \\ \hline
 {\tt cos}            & Cosseno.                     & {\tt >> cos(pi/4)}  \\ \hline
 {\tt tan}            & Tangente.                    & {\tt >> tan(pi/4)}  \\ \hline
@@ -409,7 +409,7 @@ total =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|} \hline
-\textbf{Comando} & \textbf{Descri\c{c}\~ao}    & \textbf{Exemplo}    \\ \hline 
+\textbf{Comando} & \textbf{Descri\c{c}\~ao}    & \textbf{Exemplo}    \\ \hline
 {\tt exp}       	& Exponencial.							 & {\tt >> exp(1)}  \\ \hline
 {\tt log}         & Logaritmo Natural $(=ln)$. & {\tt >> log(2.7183)}  \\ \hline
 {\tt log10}       & Logaritmo na Base 10.      & {\tt >> log10(1000)}  \\ \hline
@@ -425,7 +425,7 @@ total =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|} \hline
-\textbf{Comando}  & \textbf{Descri\c{c}\~ao}            & \textbf{Exemplo}    \\ \hline 
+\textbf{Comando}  & \textbf{Descri\c{c}\~ao}            & \textbf{Exemplo}    \\ \hline
 {\tt abs}         & Valor Absoluto ou M\'odulo.	 				& {\tt >> abs(-4)} ou {\tt >> abs(-4+6*i)}  \\ \hline
 {\tt angle}       & \^Angulo de fase em radianos.				& {\tt >> angle(-4+6*i)}  \\ \hline
 {\tt conj}        & Conjugado Complexo.          				& {\tt >> conj(-4+6*i)}  \\ \hline
@@ -442,7 +442,7 @@ total =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|} \hline
-\textbf{Comando}  & \textbf{Descri\c{c}\~ao}                      & \textbf{Exemplo}    \\ \hline 
+\textbf{Comando}  & \textbf{Descri\c{c}\~ao}                      & \textbf{Exemplo}    \\ \hline
 {\tt fix}         & Arredondamento na dire\c{c}\~ao de zero.      & {\tt >> fix(-7.6010)}  \\ \hline
 {\tt floor}       & Fun\c{c}\~ao Ch\~ao.                          & {\tt >> floor(7.6010)}  \\ \hline
 {\tt ceil}        & Fun\c{c}\~ao Teto.                            & {\tt >> ceil(7.6010)}  \\ \hline
@@ -462,7 +462,7 @@ total =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|} \hline
-\textbf{Comando}  & \textbf{Descri\c{c}\~ao}            	& \textbf{Exemplo}    \\ \hline 
+\textbf{Comando}  & \textbf{Descri\c{c}\~ao}            	& \textbf{Exemplo}    \\ \hline
 {\tt deg2rad}     & Convers\~ao de graus para radianos.	  & {\tt >> deg2rad(45)}  \\ \hline
 {\tt rad2deg}     & Convers\~ao de radianos para graus.   & {\tt >> rad2deg(pi/4)}  \\ \hline
 \end{tabular}
@@ -474,20 +474,20 @@ total =
 
 	Quando surgir alguma d\'uvida sobre comandos, fun\c{c}\~oes, quais argumentos s\~ao necess\'arios para uma dada fun\c{c}\~ao, use o comando {\tt Help}, que est\'a exemplificado abaixo:
 
-\begin{verbatim}	
+\begin{verbatim}
 >> help mod
  MOD    Modulus after division.
     MOD(x,y) is x - n.*y where n = floor(x./y) if y ~= 0.  If y is not an
     integer and the quotient x./y is within roundoff error of an integer,
     then n is that integer.  By convention, MOD(x,0) is x.  The input
     x and y must be real arrays of the same size, or real scalars.
- 
+
     The statement "x and y are congruent mod m" means mod(x,m) == mod(y,m).
- 
+
     MOD(x,y) has the same sign as y while REM(x,y) has the same sign as x.
     MOD(x,y) and REM(x,y) are equal if x and y have the same sign, but
     differ by y if x and y have different signs.
- 
+
     See also rem.
 
     Overloaded functions or methods (ones with the same name in other directories)
@@ -498,9 +498,9 @@ total =
 
 >> help sqrt
  SQRT   Square root.
-    SQRT(X) is the square root of the elements of X. Complex 
+    SQRT(X) is the square root of the elements of X. Complex
     results are produced if X is not positive.
- 
+
     See also sqrtm.
 
     Overloaded functions or methods (ones with the same name in other directories)
@@ -512,7 +512,7 @@ total =
 
 \section{Vetores}
 	At\'e agora, lidamos com constantes, informa\c{c}\~oes individuais. Mas, neste cap\'{\i}tulo, concatenamos esses dados individuais em vetor e veremos como aplicar as opera\c{c}\~oes para eles sem aplicar a opera\c{c}\~ao de um em um.
-	
+
 	O Matlab interpreta um vetor como uma matriz de uma linha e v\'arias colunas e n\~ao uma estrutura com v\'arias linhas e uma coluna, como em \'Algebra Linear. Da mesmo forma que quando t\'{\i}nhamos uma constante, o Matlab tratava-a como uma matriz de uma linha e uma coluna.
 
 \subsection{Cria\c{c}\~ao de Vetores}
@@ -521,7 +521,7 @@ total =
 
 \subsubsection{Modo Direto de Cria\c{c}\~ao de Vetor}
 	Uma vez que voc\^e j\'a conhece os elementos os quais comp\~oem o seu vetor, coloque, entre colchetes, os elementos separados por espa\c{c}os ou v\'{\i}rgulas. Por exemplo:
-	
+
 \begin{verbatim}
 >> u = [0.95013  0.76210  0.61543  0.40571  0.57891]
 u =
@@ -545,16 +545,16 @@ u1 =
      1     2     3     4
 >> v = -1:11
 v =
-    -1     0     1     2     3     4     5     6     7     8     9    10    11     
+    -1     0     1     2     3     4     5     6     7     8     9    10    11
 >> z = 2.5:8.4
 z =
-    2.5000    3.5000    4.5000    5.5000    6.5000    7.5000     
-\end{verbatim}	
-	
+    2.5000    3.5000    4.5000    5.5000    6.5000    7.5000
+\end{verbatim}
+
 \subsubsection{Progress\~ao Aritm\'etica com Raz\~ao $\neq$ 1}
 
 	Usando a express\~ao
-\begin{center}	
+\begin{center}
 {\tt <In\'{\i}cio> : <Incremento> : <Final>}
 \end{center}
 o Matlab entender\'a que voc\^e deseja construir um vetor a partir de {\tt <In\'{\i}cio>} e os pr\'oximos ser\~ao incrementados de {\tt <Incremento>} at\'e que alcance ao elemento mais pr\'oximo de {\tt <Final>}, como nos exemplos abaixo:
@@ -563,20 +563,20 @@ o Matlab entender\'a que voc\^e deseja construir um vetor a partir de {\tt <In\'
 >> u = -1:3:11
 u =
     -1     2     5     8    11
-    
+
 >> v = 14:-2:2
 v =
     14    12    10     8     6     4     2
 
 >> z = 4.5:2.3:19.4
 z =
-    4.5000    6.8000    9.1000   11.4000   13.7000   16.0000   18.3000    
+    4.5000    6.8000    9.1000   11.4000   13.7000   16.0000   18.3000
 \end{verbatim}
 
 \subsubsection{Vetor com N\'umero de Elementos Definidos}
 
 	A express\~ao
-\begin{center}	
+\begin{center}
 {\tt linspace ( <In\'{\i}cio> : <Final> : <NumElementos> )}
 \end{center}
 devolver\'a um vetor que come\c{c}a em {\tt <In\'{\i}cio>}, termina em {\tt <Final>} e possui {\tt <NumElementos>} componentes.
@@ -590,11 +590,11 @@ v =
            15       11.372       7.7434        4.115      0.48673      -3.1416
 \end{verbatim}
 
-	J\'a a express\~ao 
-\begin{center}	
+	J\'a a express\~ao
+\begin{center}
 {\tt logspace ( <In\'{\i}cio> : <Final> : <NumElementos> )}
 \end{center}
-difere da anterior porque cria espa\c{c}amentos logar\'{\i}tmicos entre seus elementos aos inv\'es de espa\c{c}amentos lineares. 
+difere da anterior porque cria espa\c{c}amentos logar\'{\i}tmicos entre seus elementos aos inv\'es de espa\c{c}amentos lineares.
 
 	O Matlab, ao efetuar o comando {\tt logspace}, entende que o usu\'ario deseja criar um vetor, de {\tt <NumElementos>} que come\c{c}a em $10^{Inicio}$ e termina em $10^{Final}$.
 
@@ -617,17 +617,17 @@ v =
 
 \subsection{Orienta\c{c}\~ao de Vetores}
 	Sabe-se que o vetor definido por \'Algebra Linear e pelo Matlab s\~ao diferentes, por\'em, para escrever um vetor em p\'e, basta usar ponto-e-v\'{\i}rgula entre cada um dos elementos ou transpor um vetor deitado.
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> u = [0.4447; 0.61543; 0.79194]
 u =
        0.4447
       0.61543
       0.79194
-\end{verbatim}	
+\end{verbatim}
 
 	Outras maneiras de transpor um vetor linha para um vetor coluna:
-\begin{verbatim}	
+\begin{verbatim}
 >> a = 3:6
 a =
      3     4     5     6
@@ -661,14 +661,14 @@ b_t2 =
 \end{verbatim}
 
 	Se o seu vetor \'e formado por elementos reais, podemos realizar a transposi\c{c}\~ao usando o operador de transposi\c{c}\~ao(') ou o operador de transposi\c{c}\~ao pontuada(.'). Por\'em se o seu vetor \'e composto por n\'umeros imagin\'arios, o operador de transposi\c{c}\~ao transp\~oe e conjuga enquanto que o operador de transposi\c{c}\~ao pontuada somente transp\~oe.
-	
+
 	Outra fato a considerar, no exemplo, \'e que para definir o vetor $b$, adiciono o n\'umero $1$ a um vetor multiplicado com sua parte imagin\'aria. Em outras linguagens de programa\c{c}\~ao, n\~ao podemos somar dois tipos diferentes, mas neste caso, Matlab \'e ``inteligente" para perceber que esse 1 \'e como um vetor de `uns'.
 
 \subsection{Endere\c{c}amento Vetorial}
 
 	Para obter um certo elemento num dado vetor, digite o nome do vetor e entre par\^entesis o \'{\i}ndice desejado.
 No entanto, se \'e necess\'ario ter acesso a pelo menos um elemento, ent\~ao podemos usar uma estrutura vetorial v\'alida no argumento dentro do par\^entesis.	Por exemplo:
-	
+
 \begin{verbatim}
 >> v = [0.4447		0.61543		0.79194		0.92181		0.73821		0.17627		0.40571		0.93547];
 >> v(5)
@@ -691,12 +691,12 @@ ans =
 
 	Ao introduzir vetores, foi dito que o Matlab l\^e um vetor como uma matriz de uma linha e v\'arias colunas, assim, os comandos para vetores s\'o tinham que se preocupar com a dimens\~ao da coluna. Agora, veremos que esses comando ser\~ao ajustados para matrizes porque temos duas dimens\~oes para tratar, linha e coluna.
 
-	A partir daqui em diante, vamos definir que se alguma fun\c{c}\~ao \'e v\'alida para matrizes, ela tamb\'em \'e v\'alida para vetores.	
-	
+	A partir daqui em diante, vamos definir que se alguma fun\c{c}\~ao \'e v\'alida para matrizes, ela tamb\'em \'e v\'alida para vetores.
+
 \subsection{Inser\c{c}\~ao de Matrizes}
 	Numa matriz, o que separa uma linha da outra \'e o ponto-e-v\'{\i}rgula ou ``enter". Mostraremos quatro modos de inserir um vetor, mas existem outras maneiras para isso.
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> A = [1 2 3; 4 5 6; 7 8 9]
 A =
      1     2     3
@@ -715,16 +715,16 @@ B =
 C =
      1     2     3
      4     5     6
-     7     8     9  
+     7     8     9
 >> D = [1:3;4:6;7:9]
 D =
      1     2     3
      4     5     6
-     7     8     9     
+     7     8     9
 \end{verbatim}
 
 	Observe que cada linha de uma matriz \'e tratada como um vetor, ent\~ao desde que usemos um comando v\'alido para escrever essa linha e separando ou com ponto-e-v\'{\i}rgula ou enter, temos uma matriz.
-	
+
 	Note que as express\~oes abordadas para criar um vetor, como
 \begin{center}
 {\tt <In\'{\i}cio> : <Final>} \\
@@ -735,7 +735,7 @@ D =
 n\~ao podem ser aplicadas para toda uma matriz, mas podem ser aplicadas de linha para linha de uma matriz.
 
 	No entanto, a estrat\'egia de criar vetores juntando vetores tamb\'em \'e v\'alida para matrizes, desde as dimens\~oes sejam compat\'{\i}veis. Vejamos:
-\begin{verbatim}	
+\begin{verbatim}
 >> E = rand(3)
 E =
     0.4447    0.9218    0.4057
@@ -745,14 +745,14 @@ E =
 F =
     1.0000    2.0000    3.0000    0.4447    0.9218    0.4057
     4.0000    5.0000    6.0000    0.6154    0.7382    0.9355
-    7.0000    8.0000    9.0000    0.7919    0.1763    0.9169    
+    7.0000    8.0000    9.0000    0.7919    0.1763    0.9169
 \end{verbatim}
 
 	Em {\tt >> E =  rand(3)} do exemplo acima, criamos uma matriz de 3 linhas por 3 colunas cujas componentes s\~ao geradas aleatoriamente.
-	
+
 \subsection{Orienta\c{c}\~ao de Matrizes}
 	O operador de transposi\c{c}\~ao (') e o de transposi\c{c}\~ao pontuada(.') trabalham de forma id\^entica ou com vetor ou com matrizes, como mostrado no exemplo:
-\begin{verbatim}	
+\begin{verbatim}
 >> A = [1 2 3; 4 5 6; 7 8 9]
 A =
      1     2     3
@@ -784,17 +784,17 @@ B_t2 =
    0.3412 + 0.4449i   0.5341 + 0.6946i   0.7271 + 0.6213i
    0.3093 + 0.7948i   0.8385 + 0.9568i   0.5681 + 0.5226i
 \end{verbatim}
-	
+
 \subsection{Opera\c{c}\~oes com Escalares}
 
 	J\'a mostramos um exemplo anteriormente na qual realizamos uma soma de um escalar com um vetor. Por\'em, esse comando ``inteligente'' n\~ao se restringe a soma, mas tamb\'em para subtra\c{c}\~ao, multiplica\c{c}\~ao e divis\~ao. O caso da multiplica\c{c}\~ao e da divis\~ao por escalar s\~ao os mais conhecidos porque s\~ao semelhantes \`a opera\c{c}\~ao alg\'ebrica.
-	
+
 	A Tabela \ref{tab:lista_oper_mat_esc} detalha as opera\c{c}\~oes que podemos realizar com matrizes e escalares.
 
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando} 									& \textbf{Descri\c{c}\~ao}   \\ \hline 
+\textbf{Comando} 									& \textbf{Descri\c{c}\~ao}   \\ \hline
 {\tt A + c}      									& Soma do escalar {\tt c} com todos os elementos da matriz {\tt A}.  \\ \hline
 {\tt A - c}      									& Subtra\c{c}\~ao do escalar {\tt c} com todos os elementos da matriz {\tt A}. \\ \hline
 {\tt A*c} ou {\tt c*A}  					& Multiplica\c{c}\~ao do escalar {\tt c} com todos os elementos da matriz {\tt A}. \\ \hline
@@ -811,7 +811,7 @@ B_t2 =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando} 			& \textbf{Descri\c{c}\~ao}    			\\ \hline 
+\textbf{Comando} 			& \textbf{Descri\c{c}\~ao}    			\\ \hline
 {\tt +}      					& Soma de matrizes.                 \\ \hline
 {\tt -}      					&	Subtra\c{c}\~ao de matrizes.      \\ \hline
 {\tt *}        				& Multiplica\c{c}\~ao de matrizes.  \\ \hline
@@ -821,7 +821,7 @@ B_t2 =
 \label{tab:lista_oper_mat_bas}
 \end{table}
 
-\begin{verbatim}	
+\begin{verbatim}
 >> A = [1 2 3; 4 5 6; 7 8 9];
 >> B = rand(3)
 B =
@@ -854,13 +854,13 @@ ans =
     9.6076    8.4359   11.8016
    15.1638   13.9447   18.5758
 \end{verbatim}
-	
+
 O Matlab tamb\'em oferece opera\c{c}\~oes elemento a elemento, que s\~ao realizados pelos operadores pontuados. Um operador pontuado j\'a visto \'e o de transposi\c{c}\~ao pontuada(.').
 
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando} 								& \textbf{Descri\c{c}\~ao}  							   \\ \hline 
+\textbf{Comando} 								& \textbf{Descri\c{c}\~ao}  							   \\ \hline
 {\tt .*}         								& Multiplica\c{c}\~ao elemento a elemento.   \\ \hline
 {\tt .$\backslash$} ou {\tt ./} & Divis\~ao de elemento a elemento.   			 \\ \hline
 {\tt .$\widehat{}$}   					& Potencia\c{c}\~ao de elemento a elemento.  \\ \hline
@@ -869,7 +869,7 @@ O Matlab tamb\'em oferece opera\c{c}\~oes elemento a elemento, que s\~ao realiza
 \caption{Comandos do Matlab correspondente \`as opera\c{c}\~oes matriciais de elemento a elemento.}
 \label{tab:lista_oper_mat_elem_elem}
 \end{table}
-	
+
 \begin{verbatim}
 >> A = [1 2 3; 4 5 6; 7 8 9];
 >> M = [1 1 1;2 2 2;3 3 3];
@@ -897,9 +897,9 @@ ans =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Fun\c{c}\~ao} & \textbf{Descri\c{c}\~ao}  							  \\ \hline 
+\textbf{Fun\c{c}\~ao} & \textbf{Descri\c{c}\~ao}  							  \\ \hline
 {\tt eye(n)}     			& Matriz Identidade de dimens\~ao {\tt n}. \\ \hline
-{\tt eye(l,c)}   			& Matriz com {\tt l} linhas e {\tt c} colunas tal que $A(i,i) = 1$ e $A(i,j) = 0$, $i \neq j$. \\ \hline 
+{\tt eye(l,c)}   			& Matriz com {\tt l} linhas e {\tt c} colunas tal que $A(i,i) = 1$ e $A(i,j) = 0$, $i \neq j$. \\ \hline
 {\tt ones(n)}    			& Matriz de dimens\~ao {\tt n} com todos os elementos iguais a um.  \\ \hline
 {\tt ones(l,c)}  			& Matriz com {\tt l} linhas e {\tt c} colunas com todos os elementos iguas a um.  \\ \hline
 {\tt zeros(n)}   			& Matriz de dimens\~ao {\tt n} com todos os elementos iguas a zero.  \\ \hline
@@ -911,7 +911,7 @@ ans =
 \label{tab:lista_mat_padrao}
 \end{table}
 
-\begin{verbatim}	
+\begin{verbatim}
 >> eye(4)
 ans =
      1     0     0     0
@@ -930,8 +930,8 @@ ans =
 \subsection{Endere\c{c}amento Matricial}
 
 	O endere\c{c}amento matricial funciona da mesma maneira que no caso de vetores, com a difere\c{c}a de ajuste de argumentos, ou seja, para fazer refer\^encia a um elemento da matriz, precisamos indical qual a linha e qual a coluna. Entretanto, a manipula\c{c}\~ao desses argumentos \'e o mesmo que para vetor. Vejamos os exemplos:
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> A = [1 2 3; 4 5 6; 7 8 9];		%definindo a matriz
 >> A(3,2)
 ans =
@@ -957,13 +957,13 @@ ans =
 \end{verbatim}
 
 	O operador dois-pontos representa ou todas as linhas ou todas as colunas, dependendo de onde est\'a posicionado o operador. Nos exemplos, veja que se o operador aparece no primeiro argumento, ent\~ao queremos selecionar todas as linhas, contudo, se o operador aparece no segunda argumento, queremos selecionar todas as colunas.
-	
+
 	A Tabela \ref{tab:lista_oper_mat_end} abaixo mostra alguns comandos para endere\c{c}amento matricial.
-	
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando}  & \textbf{Descri\c{c}\~ao}    \\ \hline 
+\textbf{Comando}  & \textbf{Descri\c{c}\~ao}    \\ \hline
 {\tt A(r,c)}      & Devolve a submatriz {\tt A} cujas linhas e colunas s\~ao definidas por {\tt r} e {\tt c}. \\ \hline
 {\tt A(r,:)}      & Devolve a submatriz {\tt A} cujas linhas s\~ao definidas por {\tt r} e com todas as colunas.  \\ \hline
 {\tt A(:,c)}      & Devolve a submatriz {\tt A} cujas colunas s\~ao definidas por {\tt c} e com todas as linhas.  \\ \hline
@@ -972,7 +972,7 @@ ans =
 \caption{Comandos do Matlab correspondentes \`a endere\c{c}amento matricial.}
 \label{tab:lista_oper_mat_end}
 \end{table}
-	
+
 	Tendo $A(:)$, estamos trabalhando com um vetor, sendo assim, podemos usar os recursos de endere\c{c}amento vetorial para $A(:)$.
 
 \subsection{Mais Recursos Dispon\'{\i}veis para Matrizes}
@@ -980,7 +980,7 @@ ans =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Fun{c}\~ao} & \textbf{Descri\c{c}\~ao}    \\ \hline 
+\textbf{Fun{c}\~ao} & \textbf{Descri\c{c}\~ao}    \\ \hline
 {\tt sort(A)}     	& Ordena\c{c}\~ao das colunas da matriz {\tt A}.  \\ \hline
 {\tt sort(A,1)}   	& Ordena\c{c}\~ao ao longo da primeira dimens\~ao (linha).  \\ \hline
 {\tt sort(A,2)}   	& Ordena\c{c}\~ao ao longo da segunda dimens\~ao (linha).  \\ \hline
@@ -1000,7 +1000,7 @@ ans =
 B =
     0.4447    0.9218    0.4057
     0.6154    0.7382    0.9355
-    0.7919    0.1763    0.9169 
+    0.7919    0.1763    0.9169
 >> [C,id] = sort(B)
 C =
     0.4447    0.1763    0.4057
@@ -1009,7 +1009,7 @@ C =
 id =
      1     3     1
      2     2     3
-     3     1     2    
+     3     1     2
 >> v = find(B>0.5)
 v =
      2
@@ -1042,17 +1042,17 @@ idu =
 u2 =
     0.4447    0.1763    0.4057
 idu2 =
-     1     3     1     
+     1     3     1
 \end{verbatim}
 
 \newpage
 
 \subsection{Dimens\~oes de Matrizes}
-	
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Fun\c{c}\~ao} & \textbf{Descri\c{c}\~ao}\\ \hline 
+\textbf{Fun\c{c}\~ao} & \textbf{Descri\c{c}\~ao}\\ \hline
 {\tt size(A)} 		    & Retorna as dimens\~oes da matriz {\tt A}.  \\ \hline
 {\tt size(A,1)}   		& Retorna n\'umero de linhas de {\tt A}.  \\ \hline
 {\tt size(A,2)} 		  & Retorna n\'umero de colunas de {\tt A}.  \\ \hline
@@ -1068,7 +1068,7 @@ idu2 =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Fun\c{c}\~ao}   & \textbf{Descri\c{c}\~ao}\\ \hline 
+\textbf{Fun\c{c}\~ao}   & \textbf{Descri\c{c}\~ao}\\ \hline
 {\tt A$\widehat{}$ n}   & Potenciac\~ao de matrizes.  \\ \hline
 {\tt det(A)}   				  & Determinante de {\tt A}.  \\ \hline
 {\tt inv(A)}   					& Inversa de {\tt A}.  \\ \hline
@@ -1079,13 +1079,13 @@ idu2 =
 \end{tabular}
 \caption{Fun\c{c}\~oes relacionadas a \'Algebra Matricial.}
 \label{tab:lista_algebra}
-\end{table}		
-	
-\newpage	
-	
+\end{table}
+
+\newpage
+
 \section{Programando no Matlab}
 	Vimos que \'e poss\'{\i}vel trabalhar com mais de um comando num mesmo prompt {\tt >>} desde que separemos os comandos com v\'{\i}rgula ou ponto-e-v\'{\i}rgula. Por\'em, caso desejamos executar uma sequ\^encia de comandos, a Janela de Comandos j\'a n\~ao seria conveniente e assim, podemos recorrer ao Editor do Matlab, que armazenam esses sequ\^encias de comandos nos arquivos ``.m''.
-	
+
 	Existem duas maneiras de acessar o Editor do Matlab, as quais est\~ao ilustradas nas figuras abaixo. A primeira \'e clicando em \textbf{``New M-File''}, que est\'a representado por uma p\'agina em branco no toolbar do Matlab. A segunda maneira \'e atrav\'es da barra de ferramentas, em File $\rightarrow$ New $\rightarrow$ M-file.
 
 \begin{figure}[!h]
@@ -1098,21 +1098,21 @@ idu2 =
 
 \begin{enumerate}
 	\item Mesmo o Matlab tendo o seu editor, n\~ao \'e necess\'ario que o programa seja escrito nesse editor, por\'em \'e preciso que o arquivo seja salvo com extens\~ao ``.m''.
-	\item A primeira linha de comando do seu arquivo M \'e 
-\begin{center}	
+	\item A primeira linha de comando do seu arquivo M \'e
+\begin{center}
 {\tt function[<vari\'aveis\_de\_sa\'{\i}da>] = <nome\_da\_fun\c{c}\~ao>(<vari\'aveis\_de\_entrada>)}
 \end{center}
 	Se o seu programa retornar somente uma vari\'avel de sa\'{\i}da, ent\~ao os colchetes s\~ao opcionais; se o seu programa n\~ao tem vari\'aveis de entrada, os par\^entesis s\~ao opcionais; se o seu programa n\~ao tem vari\'aveis de entrada e de sa\'{\i}da, o cabe\c{c}alho acima tamb\'em n\~ao \'e necess\'ario, no entanto, se quiser permanecer com o cabe\c{c}alho, use a express\~ao abaixo:
-\begin{center}	
+\begin{center}
 {\tt function <nome\_da\_fun\c{c}\~ao>}
-\end{center}	
+\end{center}
 
 Para chamar seu arquivo M, v\'a na \textit{Janela de Comando}, chame seu arquivo M atrav\'es da express\~ao
-\begin{center}	
+\begin{center}
 {\tt >> [<vari\'aveis\_de\_sa\'{\i}da\_desejadas>]=<nome\_da\_fun\c{c}\~ao>(<vari\'aveis\_de\_entrada>)}
 \end{center}
 ou
-\begin{center}	
+\begin{center}
 {\tt >> <nome\_da\_fun\c{c}\~ao>}
 \end{center}
 onde a primeira express\~ao se refere aos casos em que existem ou vari\'aveis de entrada ou de sa\'{\i}da e a segunda aos que n\~ao existe nem vari\'aveis de sa\'{\i}da nem de entrada.
@@ -1124,7 +1124,7 @@ Se o seu algoritmo exibe tr\^es vari\'aveis de sa\'{\i}da, ent\~ao no Matlab, n\
 	\item Atualize o diret\'orio onde est\~ao os seus arquivos M.
 	\item As primeiras linhas de coment\'ario antes ou abaixo	do cabe\c{c}alho do {\tt function} ser\~ao interpretadas pelo Matlab como help do seu arquivo M.
 \end{enumerate}
-	
+
 \subsection{Exemplos}
 
 \subsubsection{Cria\c{c}\~ao de Vetores}
@@ -1138,9 +1138,9 @@ $0$ & $0.1\pi$ & $0.2\pi$ & $0.3\pi$ & $0.4\pi$ & $0.5\pi$ & $0.6\pi$ & $0.7\pi$
 \end{tabular}
 \caption{Vetor a ser criado para exemplificar como trabalhar com arquivos M.}
 \label{tab:exemplo_arquivoM}
-\end{table}			
-	
-\begin{verbatim}	
+\end{table}
+
+\begin{verbatim}
 %criando_vetor.m
 %primeira maneira de criar o vetor proposto
 %uma funcao que nao tem variaveis de entrada, mas tem variaveis de saida
@@ -1150,7 +1150,7 @@ v = 0:0.1:1;
 v = pi*v;
 \end{verbatim}
 \line(1,0){200}
-\begin{verbatim}	
+\begin{verbatim}
 %criando_vetor2.m
 %segunda maneira de criar o vetor proposto
 %uma funcao que nao tem variaveis de entrada nem de saida
@@ -1158,14 +1158,14 @@ v = pi*v;
 v = [0 0.1*pi 0.2*pi 0.3*pi 0.4*pi 0.5*pi 0.6*pi 0.7*pi 0.8*pi 0.9*pi pi]
 \end{verbatim}
 \line(1,0){200}
-\begin{verbatim}	
+\begin{verbatim}
 %criando_vetor.m
 %terceira maneira de criar o vetor proposto
 %uma funcao que nao tem variaveis de entrada, mas tem variaveis de saida
 function v = criando_vetor3
 
 v = linspace(0,pi,11);
-\end{verbatim}	
+\end{verbatim}
 
 No Matlab,
 \begin{verbatim}
@@ -1179,13 +1179,13 @@ v =
  criando_vetor.m
  primeira maneira de criar o vetor proposto
  uma funcao que nao tem variaveis de entrada, mas tem variaveis de saida
-\end{verbatim} 
+\end{verbatim}
 
 \subsubsection{Realizando a Divis\~ao}
 
 	Dado um n\'umero a e b, vamos realizar a divis\~ao de a por b e retornar o quociente e o resto.
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 %divisao.m
 %realiza divisao de a por b
 %variaveis de entrada: a e b
@@ -1221,20 +1221,20 @@ resto =
 quoc =
      7
 resto =
-     1     
+     1
 \end{verbatim}
 
 \newpage
 
-\section{Operadores Relacionais e L\'ogicos}	
-	Os operadores relacionais e l\'ogicos s\~ao respons\'aveis por fornecer respostas do tipo Falso/Verdeiro a perguntas. Se a resposta for verdadeira, o operador retorna 1, por\'em se a resposta for falsa, ent\~ao operador	devolve 0. 
-	
-\subsection{Operadores Relacionais}	
-	
+\section{Operadores Relacionais e L\'ogicos}
+	Os operadores relacionais e l\'ogicos s\~ao respons\'aveis por fornecer respostas do tipo Falso/Verdeiro a perguntas. Se a resposta for verdadeira, o operador retorna 1, por\'em se a resposta for falsa, ent\~ao operador	devolve 0.
+
+\subsection{Operadores Relacionais}
+
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando} & \textbf{Descri\c{c}\~ao}    \\ \hline 
+\textbf{Comando} & \textbf{Descri\c{c}\~ao}    \\ \hline
 {\tt $<$}    		 & Menor que. \\ \hline
 {\tt $\leq$}     & Menor ou igual a. \\ \hline
 {\tt $>$}     	 & Maior que. \\ \hline
@@ -1244,10 +1244,10 @@ resto =
 \end{tabular}
 \caption{Comandos de Operadores Relacionais.}
 \label{tab:lista_oper_relacional}
-\end{table}		
+\end{table}
 
 	Vejamos os exemplos para aplicar o operador relacional. Al\'em de obter respostas para perguntas por meio de operador relacional, podemos combinar express\~oes relacionais com express\~oes matem\'aticas, como mostra o \'ultimo exemplo.
-	
+
 \begin{verbatim}
 >> A = rand(1,4)
 A =
@@ -1268,14 +1268,14 @@ vf =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando} & \textbf{Descri\c{c}\~ao}    \\ \hline 
+\textbf{Comando} & \textbf{Descri\c{c}\~ao}    \\ \hline
 {\tt \&}		     & E, usado em compara\c{c}\~ao de senten\c{c}as. \\ \hline
 {\tt $\vert$}    & OU, usado em compara\c{c}\~ao de senten\c{c}as. \\ \hline
 {\tt $\sim$}     & N\~AO, usado em compara\c{c}\~ao de senten\c{c}as. \\ \hline
 \end{tabular}
 \caption{Comandos de Operadores L\'ogicos.}
 \label{tab:lista_oper_logico}
-\end{table}		
+\end{table}
 
 \begin{verbatim}
 >> vfn = ~(A > B)
@@ -1291,17 +1291,17 @@ vfc =
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|} \hline
-\textbf{Comando} & \textbf{Descri\c{c}\~ao}    \\ \hline 
+\textbf{Comando} & \textbf{Descri\c{c}\~ao}    \\ \hline
 {\tt xor(x,y)}   & OU Exclusivo.  \\ \hline
 {\tt any(x)}     & Retorna verdadeiro se algum elemento satisfaz a condi\c{c}\~ao {\tt x}. \\ \hline
 {\tt all(x)}     & Retorna falso se todos elementos satisfazem a condi\c{c}\~ao {\tt x}. \\ \hline
 \end{tabular}
 \caption{Fun\c{c}\~oes relacionais e l\'ogicos.}
 \label{tab:lista_func_relac_logico}
-\end{table}		
+\end{table}
 
 	O OU Exclusivo funciona da seguinte maneira: retorna verdadeiro(1) se uma das duas condi\c{c}\~oes forem verdadeiras e falso(0) se ambas condi\c{c}\~oes s\~ao falsas ou verdadeiras.
-	
+
 \begin{verbatim}
 >> all(A>0.5)
 ans =
@@ -1320,11 +1320,11 @@ ans =
 \subsection{Estrutura For}
 
 	O loop for sequencia uma s\'erie de comandos por um n\'umero de vezes fixo e predefinido. A estrutura geral \'e:
-	
+
 \begin{verbatim}
 for i = vetor
     comandos...
-end	
+end
 \end{verbatim}
 Para cada coluna do vetor i, os comandos interiores do for s\~ao realizados. Veja os exemplos:
 
@@ -1368,16 +1368,16 @@ x =
 		0.30902		0.58779		0.80902		0.95106		      1		0.95106		0.80902		0.58779		0.30902		1.2246e-016
 y =
 		0.30902		0.58779		0.80902		0.95106		      1		0.95106		0.80902		0.58779		0.30902		1.2246e-016
->> [i,x] = programa2			
+>> [i,x] = programa2
 i =
-     1			
-x =		
+     1
+x =
 		0.30902		0.58779		0.80902		0.95106		      1		0.95106		0.80902		0.58779		0.30902		1.2246e-016
->> [i,y] = programa3			
+>> [i,y] = programa3
 i =
      5
 y =
-     1     1     1     1     0		
+     1     1     1     1     0
 \end{verbatim}
 
 Note, nos exemplos mostrados, que no {\tt vetor} da estrutura {\tt for}, podemos colocar vetor linha, vetor coluna ou at\'e matriz, por\'em o que \'e usado como contador do loop for \'e o n\'umero de colunas de {\tt vetor}.
@@ -1429,12 +1429,12 @@ i =
 >> i = programa4(16)
 i =
      4
-\end{verbatim}	
+\end{verbatim}
 
 \subsection{Estrutura If-Else}
 
 	Essas estruturas j\'a n\~ao s\~ao loops, ou seja, os comandos ser\~ao executados somente uma vez condicionalmente. A estrutura mais simples \'e
-	
+
 \begin{verbatim}
 if condicao
      comandos...
@@ -1462,7 +1462,7 @@ elseif condicao2
 elseif condicao3
      ...
 ...
-     ...	     
+     ...
 else
      comandos_finais...
 end
@@ -1480,7 +1480,7 @@ else
     vf = 0;
 end
 \end{verbatim}
-\line(1,0){200}	
+\line(1,0){200}
 \begin{verbatim}
 %programando a funcao sinal
 %sinal = 1 se num é positivo
@@ -1511,7 +1511,7 @@ sinal =
 
 \subsection{Estrutura Switch-Case}
 
-	A estrutura, mostrada acima, tem o mesmo funcionamento que o {\tt if-else}, mas a diferen\c{c}a \'e que no {\tt if-else} verifica se a condi\c{c}\~ao \'e verdadeira ou n\~ao e no switch-case verifica a igualdade da {\tt teste\_expressao}. 
+	A estrutura, mostrada acima, tem o mesmo funcionamento que o {\tt if-else}, mas a diferen\c{c}a \'e que no {\tt if-else} verifica se a condi\c{c}\~ao \'e verdadeira ou n\~ao e no switch-case verifica a igualdade da {\tt teste\_expressao}.
 
 	No {\tt switch-case}, a expressao pode ser um escalar ou uma string. Se {\tt expressao} \'e igual a {\tt teste\_expressao1}, ent\~ao executam-se os {\tt comandos1...} e j\'a vai direto no {\tt end}, no entanto, se {\tt expressao} \'e diferente de {\tt teste\_expressao1}, faz o teste de igualdade com {\tt teste\_expressao2} e assim por diante.
 
@@ -1524,7 +1524,7 @@ switch expressao
      case teste_expressao3
           ...
      ...
-          ...               
+          ...
      otherwise
           comandos_finais...
 end
@@ -1538,10 +1538,10 @@ switch unidades
     case {'polegadas','pol'}
         y = x*2.54;
     case {'pes','p'}
-        y = x*2.54/12;        
-    case {'metros','m'}    
+        y = x*2.54/12;
+    case {'metros','m'}
         y = x/100;
-    case {'milimetros','mm'}        
+    case {'milimetros','mm'}
         y = x*10;
     case {'centimetros','cm'}
         y = x;
@@ -1567,12 +1567,12 @@ y =
 	O comando {\tt break} interrompe o loop em que ele est\'a inserido e continua a compilar o arquivo M ap\'os a primeira linha fora do loop no qual ele aparece. Esse comando pode ser usado nas estruturas {\tt if-else}, {\tt for} e {\tt while}.
 
 	O comando {\tt continue}, que \'e usado no {\tt for} e {\tt while}, faz com que o Matlab v\'a direto para a instru\c{c}\~ao final do loop, ignorando todos os comando entre o {\tt continue} e o {\tt end} e assim, segue com a pr\'oxima itera\c{c}\~ao. Podemos tamb\'em usar continue no {\tt if-else}, por\'em esse comando n\~ao tem efeito porque o {\tt if-else} s\'o tem uma itera\c{c}\~ao.
-	
+
 	J\'a o comando {\tt return} p\'ara a execu\c{c}\~ao do arquivo M. Quando o comando {\tt return} \'e encontrado no arquivo M, mesmo que esteja dentro de um loop, o Matlab j\'a avan\c{c}a para a \'ultima linha.
-	
+
 	Seguem os exemplos abaixo:
-	
-\begin{verbatim}		
+
+\begin{verbatim}
 %Essa funcao recebe o numero num
 %Enquanto num+1 eh maior que um, num vai sendo dividido por 2.
 %Quando num+1 eh menor que um, multiplica num por 2 e termina o loop.
@@ -1586,7 +1586,7 @@ for i = 1:1000
     end
 end
 \end{verbatim}
-\line(1,0){200}	
+\line(1,0){200}
 \begin{verbatim}
 %funcao que recebe um numero num
 %se num for par, dividir por 2
@@ -1605,18 +1605,18 @@ for i = 1:1000
     end
 end
 \end{verbatim}
-	
+
 	Lembre-se que á fun\c{c}\~ao {\tt eh\_par} foi usado como um exemplo anterior para mostrar como trabalhar com a estrutura {\tt if-else}.
-	
-	Veja, no	exemplo, que a primeira fun\c{c}\~ao gera uma sequ\^encia de n\'umeros tal que o \'ultima elemento \'e zero, enquanto que a segunda fun\c{c}\~ao gera uma sequ\^encia de n\'umeros cujo \'ultimo elemento \'e um. 
+
+	Veja, no	exemplo, que a primeira fun\c{c}\~ao gera uma sequ\^encia de n\'umeros tal que o \'ultima elemento \'e zero, enquanto que a segunda fun\c{c}\~ao gera uma sequ\^encia de n\'umeros cujo \'ultimo elemento \'e um.
 	Perceba que quando {\tt num} atinge o valor do \'ultimo elemento, a leitura do arquivo M \'e finalizada e o Matlab retorna as vari\'aveis de sa\'{\i}da que foram obtidas at\'e que ele se encontrasse com o {\tt break} e {\tt return}.
-	
+
 \subsection{Recurs\~ao}
 
 	Recurs\~ao \'e um m\'etodo de programa\c{c}\~ao no qual uma fun\c{c}\~ao pode chamar a si mesma, como por exemplo: N\'umeros de Fibonacci, N\'umero Fatorial.
-	
+
 	Lembra da fun\c{c}\~ao {\tt programa6(num)}, que recebe um n\'umero que \'e dividido por 2 se ele for par ou multiplicado por 3 e somado com 1 se ele for \'{\i}mpar. Apresentamos essa fun\c{c}\~ao por meio da estrutura for, agora vamos program\'a-lo usando recurs\~ao.
-	
+
 \begin{verbatim}
 %funcao que usa recursao
 %recebe um numero num
@@ -1635,14 +1635,14 @@ else
     i = programa6_recursao((3*num+1)/2, i)+2;
 end
 \end{verbatim}
-	
-\subsection{Fun\c{c}\~oes como Argumento}	
+
+\subsection{Fun\c{c}\~oes como Argumento}
 	Passar fun\c{c}\~oes como argumento n\~ao \'e t\~ao simples porque estamos passando uma string, por\'em precisamos transformar essa string numa express\~ao de comando v\'alida.
 
 \subsubsection{Comando Eval}
 	Este comando recebe uma string e recorre a um interpretador do Matlab que avalia qualquer string que se adapte \`a sintaxe do Matlab. Em se tratando de fun\c{c}\~oes como argumento, o comando {\tt eval} atende bem \`as nossas necessidades.
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> x = 1; y = 3;
 >> a = eval('x^2 + y^2')
 a =
@@ -1652,26 +1652,26 @@ b =
    400
 >> c = eval('eh_par(15)')
 c =
-     0   
+     0
 \end{verbatim}
-	
+
 	Ao recorrer ao {\tt eval} para interpretar uma string como comando, se exige bastante do computador. Ent\~ao, podemos usar o comando {\tt feval} para diminuir a frequ\^encia do uso de {\tt eval}.
-	
-\subsubsection{Comando feval}	
+
+\subsubsection{Comando feval}
 	Este comando tem sua opera\c{c}\~ao limitada em rela\c{c}\~ao ao {\tt eval}, por\'em \'e mais eficiente porque o Matlab j\'a sup\~oe que o usu\'ario est\'a passando uma fun\c{c}\~ao do Matlab como argumento. Para se usar {\tt feval},
-	
-\begin{center}	
+
+\begin{center}
 {\tt feval(`minha\_funcao',x)}
 \end{center}
-	
+
 	Por exemplo, na \textit{Janela de Comando}:
-\begin{verbatim}	
+\begin{verbatim}
 >> feval(`exp',2)
 ans =
     7.3891
 >> exp(2)
 ans =
-    7.3891    
+    7.3891
 >> feval(`x+1',4)
 ??? Error using ==> feval
 Invalid function name `x+1'.
@@ -1685,13 +1685,13 @@ Por\'em, outra alternativa para passar fun\c{c}\~ao como argumento \'e function\
 Na \textit{Janela de Comando}:
 \begin{verbatim}
 >> f = @(x) exp(x)
-f = 
+f =
     @(x) exp(x)
 >> f(2)
 ans =
     7.3891
 >> g = @(x,y) (x^2+y^2)
-g = 
+g =
     @(x,y) (x^2+y^2)
 >> g(1,3)
 ans =
@@ -1701,7 +1701,7 @@ ans =
     10
 >> feval(@(x,y) (x^2+y^2),1,3)
 ans =
-    10        
+    10
 \end{verbatim}
 
 Exemplo em um arquivo M:
@@ -1711,42 +1711,42 @@ function x = programa7(funcao,x)
 
 for i = 1:length(x)
     x(i) = feval(funcao,x(i));
-end    
+end
 \end{verbatim}
 
-E da\'{\i}, chamando na \textit{Janela de Comando}, temos:	
+E da\'{\i}, chamando na \textit{Janela de Comando}, temos:
 \begin{verbatim}
 >> funcao = @(x) (x^2-1)
-funcao = 
+funcao =
     @(x) (x^2-1)
 >> x = programa7(funcao,[1 2 3])
 x =
-     0     3     8  
+     0     3     8
 >> x = programa7(`x^2-1',[1 2 3])
 ??? Invalid function name `x^2-1'.
 
 Error in ==> programa7 at 4
-    x(i) = feval(funcao,x(i));         
+    x(i) = feval(funcao,x(i));
 \end{verbatim}
-	
+
 	O feval s\'o funciona quando o argumento \'e uma fun\c{c}\~ao, ou seja, algum arquivo M. Nesse caso, {\tt `$x^2$-1'} n\~ao est\'a numa fun\c{c}\~ao, mas {\tt funcao = @(x) ($x^2$-1)} \'e um fun\c{c}\~ao\_handle, por isso que o feval executa o comando.
-	
-\newpage	
-	
-\section{Gr\'aficos Bidimensionais}	
+
+\newpage
+
+\section{Gr\'aficos Bidimensionais}
 	Uma das vantagens de se trabalhar com Matlab \'e a versatilidade para gerar e trabalhar com gr\'aficos, al\'em da extensa op\c{c}\~oes e fun\c{c}\~oes relacionadas com gr\'aficos.
 
-\subsection{Conhecendo a fun\c{c}\~ao {\tt plot}} 
+\subsection{Conhecendo a fun\c{c}\~ao {\tt plot}}
 	O comando {\tt plot} \'e o comando mais comum para a elabora\c{c}\~ao de gr\'aficos bidimensionais. Os dois primeiros argumentos que v\~ao no comando {\tt plot} s\~ao, respectivamente os pontos da abscissa e os da ordenada. Da\'{\i}, o Matlab plota os pontos e conecta-os com retas. Veja o exemplo:
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> x = rand(2,6)
 x =
     0.4057    0.9169    0.8936    0.3529    0.0099    0.2028
     0.9355    0.4103    0.0579    0.8132    0.1389    0.1987
 >> plot(x(1,:),x(2,:))
 \end{verbatim}
-	
+
 	O gr\'afico obtido \'e:
 \begin{figure}[!h]
 \centering
@@ -1754,14 +1754,14 @@ x =
 \caption{Gr\'afico do primeiro exemplo de {\tt plot}.}
 \label{fig:graf_bd1}
 \end{figure}
-	
+
 Se quisermos plotar mais de uma fun\c{c}\~ao num mesmo gr\'afico, \'e s\'o continuar colocando os vetores no argumento de plot.
 \begin{verbatim}
 >> x = linspace(0,2*pi,30);
 >> y = -1.1+0.4*x;
 >> z = cos(x);
 >> plot(x,y,x,z), title(`Grafico com duas funcoes')
-\end{verbatim}	
+\end{verbatim}
 
 O gr\'afico adquirido \'e:
 \begin{figure}[!h]
@@ -1773,27 +1773,27 @@ O gr\'afico adquirido \'e:
 
 \subsection{Estilos de Linhas, Marcadores e Cores}
 
-	No Matlab, tamb\'em \'e poss\'{\i}vel alterar o estilo da linha do gr\'afico, at\'e mesmo para facilitar a visualiza\c{c}\~ao, caso voc\^e tenha que plotar mais de uma reta. 
-	
+	No Matlab, tamb\'em \'e poss\'{\i}vel alterar o estilo da linha do gr\'afico, at\'e mesmo para facilitar a visualiza\c{c}\~ao, caso voc\^e tenha que plotar mais de uma reta.
+
 	As informa\c{c}\~oes espec\'{\i}ficas sobre qual o tipo de linha, marcador e cores s\~ao mostradas no terceiro argumento. Confira a Tabela \ref{tab:lista_estilos} abaixo para saber quais os estilos que voc\^e pode usar. Vamos usar o \'ultimo	gr\'afico mostrado para exemplificar como colocar estilos:
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> plot(x,y,`r-',x,z,`b-.')
 >> title(`Trabalhando estilos de linhas')
 >> xlabel(`eixo das abscissas'), ylabel(`eixo das ordenadas')
-\end{verbatim}	
+\end{verbatim}
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{grafico3.jpg}
 \caption{Gr\'afico com estilo de linhas.}
 \label{fig:graf_bd_3}
-\end{figure}	
+\end{figure}
 
 \newpage
 
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|l|l|l|l|} \hline	
+\begin{tabular}{|l|l|l|l|l|l|} \hline
 \textbf{S\'{\i}mbolo} & \textbf{Cor} & \textbf{S\'{\i}mbolo} & \textbf{Marcador} & \textbf{S\'{\i}mbolo} & \textbf{Tipo de Linha} \\ \hline
 {\tt b} & Azul & . & Ponto & - & Linha Cont\'{\i}nua \\ \hline
 {\tt g} & Verde & o & C\'{\i}rculo & : & Linha pontilhada \\ \hline
@@ -1814,14 +1814,14 @@ O gr\'afico adquirido \'e:
 \end{table}
 
 	Se um usu\'ario plotar um gr\'afico com v\'arias fun\c{c}\~oes e n\~ao especificar as cores, os marcadores e os tipos de linhas, o pr\'oprio Matlab tem seu sistema para diferenciar uma fun\c{c}\~ao da outra, ent\~ao n\~ao se preocupe. Outra maneira de trabalhar com as cores, os marcadores e os tipos de linhas \'e na pr\'opria janela do \textit{Figure}, a janela que se abre quando se pede para plotar um gr\'afico.
-	
+
 \subsection{Gr\'aficos M\'ultiplos}
 
 	Voc\^e j\'a deve ter notado que toda vez que voc\^e envia um novo comando {\tt plot}, o Matlab n\~ao armazena nem segura seu gr\'afico antigo. No entanto, usando o comando {\tt hold on}, podemos acrescentar novas curvas em gr\'aficos anteriores. Para desabilitar {\tt hold on}, usar {\tt hold off}.
-	
+
 	O comando {\tt hold on} n\~ao remove os eixos existentes quando novas fun\c{c}\~oes s\~ao adicionadas, mas pode ocorrer ajustes nos eixos para plotar as novas fun\c{c}\~oes alterando sua escala.
-	
-\begin{verbatim}	
+
+\begin{verbatim}
 >> x = linspace(0,2*pi,30);
 >> y = sin(x);
 >> z = cos(x);
@@ -1840,17 +1840,17 @@ O gr\'afico adquirido \'e:
 \includegraphics[scale=0.4]{grafico4.jpg}
 \caption{Fun\c{c}\~oes novas em gr\'afico antigo.}
 \label{fig:graf_bd4}
-\end{figure}	
+\end{figure}
 
 	Observe que podemos acrescentar um quarto argumento no plot, ou seja, al\'em de passar o par de vetores, a descri\c{c}\~ao das cores, tipos de linhas e marcadores, tamb\'em posso especificar a grossura da linha e dos marcadores, como o exemplo mostrou.
 
 	Outra vantagem de trabalhar com Matlab \'e que esses detalhes podem ser editados na janela \textit{Figure}, como j\'a dito anteriormente. \'E poss\'{\i}vel passar somente em {\tt plot(x,y)} e acrescentar o resto dos detalhes na janela Figure.
-	
-\subsection{Figura M\'ultiplas}	
-	
+
+\subsection{Figura M\'ultiplas}
+
 	Uma janela \textit{Figure} n\~ao precisa conter necessariamente um gr\'afico, isto \'e, podemos tratar \textit{Figure} como uma matriz de gr\'aficos que v\~ao guardando subgr\'aficos. Os subgr\'aficos s\~ao numerados da esquerda para a direita, primeiro na linha superior, depois na segunda linha e assim por diante. Por exemplo:
 
-\begin{verbatim}	
+\begin{verbatim}
 >> x = linspace(0,2*pi,30);
 >> y = sin(x);
 >> z = cos(x);
@@ -1871,12 +1871,12 @@ O gr\'afico adquirido \'e:
 \includegraphics[scale=0.4]{grafico5.jpg}
 \caption{Plotando subgr\'aficos.}
 \label{fig:graf_bd5}
-\end{figure}	
+\end{figure}
 
 \subsection{Outra maneira de fazer gr\'aficos}
 	Quando quiser plotar um gr\'afico e para n\~ao perder tempo calculando o vetor $y = f(x)$, ent\~ao, podemos recorrer ao comando {\tt fplot}, que recebe a fun\c{c}\~ao para calcular o vetor $y$ e um vetor que representa o eixo das abscissas. Mas lembre-se, ao usar {\tt fplot}, voc\^e est\'a passando uma fun\c{c}\~ao como argumento, ent\~ao nesse caso, \'e preciso trabalhar recomendavelmente com function\_handle.
 
-\begin{verbatim}	
+\begin{verbatim}
 >> fplot(@(x) x^2-1,[-0.5 3],`g-.')
 >> hold off
 >> fplot(@exp,[-0.5 3],`r--')
@@ -1891,15 +1891,15 @@ O gr\'afico adquirido \'e:
 \includegraphics[scale=0.4]{grafico6.jpg}
 \caption{Gr\'afico plotado por {\tt fplot}.}
 \label{fig:graf_bd6}
-\end{figure}	
+\end{figure}
 
 \subsection{Mais coisas sobre plotar gr\'aficos}
 
 	Existem outros gr\'aficos, com o de barras ou em forma de pizza, que n\~ao s\~ao provenientes de fun\c{c}\~oes nem de lista de pares ordenados. Mas mesmo assim, o Matlab consegue fazer esses tipos de gr\'afico.
-	
+
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|} \hline	
+\begin{tabular}{|l|l|} \hline
 \textbf{Fun\c{c}\~ao} & \textbf{Descri\c{c}\~ao} \\ \hline
 {\tt plot} 						&	Gr\'afico Linear. \\ \hline
 {\tt loglog} 					&	Gr\'afico Log-log. \\ \hline
@@ -1922,17 +1922,17 @@ O gr\'afico adquirido \'e:
 \caption{Fun\c{c}\~oes relacionadas com gr\'afico bidimensionais.}
 \label{tab:lista_func_graf_bd}
 \end{table}
-	
+
 \newpage
-	
+
 \section{Gr\'aficos Tridimensionais}
 
 	Quando apresentamos vetores e, em seguida, matrizes, foi comentado que os comandos de vetor foram adaptados para matrizes. No caso de gr\'aficos, acontecer\'a a mesma situa\c{c}\~ao, isto \'e, os comandos de gr\'aficos tridimensionais ser\~ao como uma extens\~ao dos comandos de gr\'aficos bidimensionais.
 
-\subsection{Gr\'aficos de Linhas}	
-		A fun\c{c}\~ao {\tt plot} dos gr\'aficos bidimensionais \'e estendido para o {\tt plot3} para fazer gr\'aficos tridimensionais. Em {\tt plot3}, devemos apresentar uma tripla de vetores para podermos fazer o gr\'afico, no entanto, podemos acrescentar os argumentos extras para adicionar os detalhes de tipos de linhas, marcadores, cores, tamanho da letra etc. Vejamos os exemplos: 
+\subsection{Gr\'aficos de Linhas}
+		A fun\c{c}\~ao {\tt plot} dos gr\'aficos bidimensionais \'e estendido para o {\tt plot3} para fazer gr\'aficos tridimensionais. Em {\tt plot3}, devemos apresentar uma tripla de vetores para podermos fazer o gr\'afico, no entanto, podemos acrescentar os argumentos extras para adicionar os detalhes de tipos de linhas, marcadores, cores, tamanho da letra etc. Vejamos os exemplos:
 
-\begin{verbatim}	
+\begin{verbatim}
 >> t = linspace(0,10*pi,100);
 >> plot3(sin(t),cos(t),t)
 >> grid on
@@ -1946,9 +1946,9 @@ O gr\'afico adquirido \'e:
 \includegraphics[scale=0.4]{grafico7.jpg}
 \caption{O primeiro exemplo de gr\'afico tridimensional.}
 \label{fig:graf_td7}
-\end{figure}		
+\end{figure}
 
-\begin{verbatim}	
+\begin{verbatim}
 >> x = linspace(-20,20); y = linspace(-20,20);
 >> plot3(x,y,x.^2+y.^2,`r--',`LineWidth',3)
 >> xlabel(`eixo-x'),ylabel(`eixo-y'),zlabel(`eixo-z')
@@ -1962,14 +1962,14 @@ O gr\'afico adquirido \'e:
 \includegraphics[scale=0.4]{grafico8.jpg}
 \caption{Segunda exemplo de gr\'afico tridimensional.}
 \label{fig:graf_td8}
-\end{figure}	
+\end{figure}
 
 \subsection{Fun\c{c}\~oes Escalares de Duas Vari\'aveis e o Gr\'afico de Rede}
 	Pelo \'ultimo exemplo dado, encontramos a limita\c{c}\~ao do comando {\tt plot3}, que s\'o plota linhas. Para plotar uma fun\c{c}\~ao $z = f(x,y)$, o Matlab precisa receber uma matriz de todos os pontos do produto cartesiano do eixo-x com o eixo-y para poder calcular $z(x,y)$.
-	
+
 	Dados os vetores da coordenada do eixo x e y, o comando {\tt meshgrid(x,y)} realiza o produto cartesiano de eixo-x $\times$ eixo-y. Da\'{\i}, finalmente podemos plotar a superf\'{\i}cie usando o comando {\tt mesh(X,Y,Z)}. Por exemplo:
 
-\begin{verbatim}	
+\begin{verbatim}
 >> x = linspace(-20,20); y = linspace(-20,20);
 >> [X,Y] = meshgrid(x,y);
 >> Z = (X+Y).^2;
@@ -1982,11 +1982,11 @@ O gr\'afico adquirido \'e:
 \includegraphics[scale=0.4]{grafico9.jpg}
 \caption{Primeiro gr\'afico com {\tt meshgrid} e {\tt mesh}.}
 \label{fig:graf_td9}
-\end{figure}	
+\end{figure}
 
 Mais um exemplo:
 
-\begin{verbatim}	
+\begin{verbatim}
 >> Z2 = X.^2+Y.^2;
 >> mesh(X,Y,Z2);
 >> title(`Mais um exemplo com meshgrid e mesh')
@@ -1997,33 +1997,33 @@ Mais um exemplo:
 \includegraphics[scale=0.4]{grafico10.jpg}
 \caption{Outro gr\'afico com {\tt meshgrid} e {\tt mesh}.}
 \label{fig:graf_td10}
-\end{figure}	
+\end{figure}
 
 \subsection{Gr\'afico de Superf\'{\i}cie}
 
 	Observe que o gr\'afico de rede obtido com o mesh \'e um gr\'afico todo furado. Nesta se\c{c}\~ao, vamos aprender como contruir uma superf\'{\i}cie todo preenchido com o comando surf.
-	
+
 \begin{verbatim}
 >> x = linspace(-20,20); y = linspace(-20,20);
 >> [X,Y] = meshgrid(x,y);
 >> Z = (X+Y).^2;
 >> mesh(X,Y,Z); title(`Grafico de rede criado pelo mesh')
 >> surf(X,Y,Z); title(`Grafico de supreficie criado pelo surf')
-\end{verbatim}	
+\end{verbatim}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{grafico11.jpg}
 \caption{Uma gr\'afico de rede.}
 \label{fig:graf_td11}
-\end{figure}	
+\end{figure}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{grafico12.jpg}
 \caption{Um gr\'afico de superf\'{\i}cie.}
 \label{fig:graf_td12}
-\end{figure}	
+\end{figure}
 
 \subsection{Curvas de N\'{\i}vel}
 	Nos gr\'aficos tridimensionais, podemos plotar tamb\'em as curvas de n\'{\i}vel. Como se n\~ao bastasse, o Matlab ainda nos d\'a a op\c{c}\~ao de plotar as curvas de n\'{\i}vel bi e tridimensionais. Veja os exemplos:
@@ -2034,20 +2034,20 @@ Mais um exemplo:
 >> Z = (X+Y).^2;
 >> contour(X,Y,Z,20);
 >> title(`Grafico de Curva de Nivel Bidimendional')
-\end{verbatim}	
+\end{verbatim}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{grafico13.jpg}
 \caption{Curva de n\'{\i}vel bidimensional.}
 \label{fig:graf_td13}
-\end{figure}	
+\end{figure}
 
 \begin{verbatim}
 >> Z2 = X.^2+Y.^2;
 >> contour3(X,Y,Z2,20);
 >> title(`Grafico de Curva de Nivel Tridimensional')
-\end{verbatim}	
+\end{verbatim}
 
 \newpage
 \begin{figure}[!h]
@@ -2055,7 +2055,7 @@ Mais um exemplo:
 \includegraphics[scale=0.4]{grafico14.jpg}
 \caption{Curva de n\'{\i}vel tridimensional.}
 \label{fig:graf_td14}
-\end{figure}	
+\end{figure}
 
 	Tamb\'em podemos plotar gr\'aficos bi e tridimensionais com legenda, atrav\'es do comando {\tt clabel}.
 
@@ -2064,21 +2064,21 @@ Mais um exemplo:
 >> C = contour(X3,Y3,Z3,10);
 >> clabel(C);
 >> title(`Grafico de curvas de nivel com legendas')
-\end{verbatim}	
+\end{verbatim}
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{grafico15.jpg}
 \caption{Um dos gr\'aficos de curvas de n\'{\i}vel produzido por {\tt clabel}.}
 \label{fig:graf_td15}
-\end{figure}	
+\end{figure}
 
 \begin{verbatim}
 >> [C,h] = contour(X3,Y3,Z3,8);
 >> clabel([C,h]);
 >> clabel(C,h);
 >> title(`Grafico de curvas de nivel com legendas inserida nas curvas')
-\end{verbatim}	
+\end{verbatim}
 
 \newpage
 \begin{figure}[!h]
@@ -2086,12 +2086,12 @@ Mais um exemplo:
 \includegraphics[scale=0.4]{grafico16.jpg}
 \caption{Segunto tipo de gr\'aficos de curvas de n\'{\i}vel produzido por {\tt clabel}.}
 \label{fig:graf_td16}
-\end{figure}	
+\end{figure}
 
 \subsection{Mais Comandos sobre Gr\'aficos Tridimensionais}
 \begin{table}[h]
 \centering
-\begin{tabular}{|l|l|} \hline	
+\begin{tabular}{|l|l|} \hline
 \textbf{Fun\c{c}\~ao} & \textbf{Descri\c{c}\~ao} \\ \hline
 {\tt plot3} 					&	Tra\c{c}a linha e pontos no espa\c{c}o tridimensional. \\ \hline
 {\tt mesh}  					& Superf\'{\i}cie na forma de uma rede. \\ \hline
@@ -2125,8 +2125,8 @@ Mais um exemplo:
 
 %\begin{verbatim}\end{verbatim}
 %\line(1,0){200}
-	
-	
+
+
 
 
 
