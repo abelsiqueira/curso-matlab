@@ -1,0 +1,422 @@
+\documentclass{beamer}
+
+\newcommand{\ssiz}{\scriptsize}
+\newcommand{\delim}{\line(1,0){290}}
+\newcommand{\norma}[1]{\Vert #1 \Vert_2}
+\newcommand{\modulo}[1]{\vert #1 \vert}
+\newcommand{\prodint}[2]{\langle #1,#2 \rangle}
+\newcommand{\barrav}[1]{\line(0,1){#1}}
+
+\usepackage{multicol}
+
+\colorlet{teal}[rgb]{green!50!blue}
+%\setbeamercolor{cordotitulo}{bg=green!30!black,fg=white}
+\useinnertheme{rounded}
+\setbeamercolor{structure}{fg=teal!80!blue}
+%\useoutertheme{smoothbars}
+%\useoutertheme{shadow}
+\useoutertheme[height=1 cm,width=1.5 cm]{sidebar}
+%\usecolortheme{crane}
+%\setbeamerfont{frametitle}{shape=\itshape}
+\setbeamercolor{palette primary}{bg=teal!80!blue,fg=white}
+\setbeamercolor{palette secondary}{bg=white,fg=white} %cor do logo
+\setbeamercolor{palette tertiary}{bg=blue!70!black,fg=white}
+\setbeamercolor{palette quaternary}{bg=white,fg=teal!80!blue}
+\setbeamercolor{sidebar}{bg=teal!80!blue}
+%\setbeamercolor{palette sidebar primary}{bg=red,fg=black}
+%\setbeamercolor{palette sidebar secondary}{bg=red,fg=black}
+\setbeamercolor{palette sidebar tertiary}{fg=white} %Autor no sidebar
+\setbeamercolor{palette sidebar quaternary}{fg=white} %Titulo no sidebar
+\setbeamercolor{section in sidebar}{fg=teal!80!blue,bg=white} %A cor naum
+\setbeamercolor{subsection in sidebar}{fg=teal!80!blue,bg=white} %A cor naum
+%ativa parece ser uma media das duas
+%\setbeamercolor{section in sidebar current}{fg=red}
+\setbeamercolor{frametitle}{fg=white,bg=teal!80!blue} %mudar
+%fg aqui
+\setbeamercolor{title}{bg=teal!80!blue,fg=white}
+\setbeamerfont{title}{series=\bf}
+\setbeamercolor{author}{bg=teal!80!blue,fg=white}
+\setbeamerfont{author}{series=\bf}
+\setbeamercolor{normal text}{bg=white,fg=teal!50!black}
+\logo{\includegraphics[scale=0.06]{matlab_logo.jpg}}
+
+\title{Introdu\c{c}\~ao ao MatLab \\ Aula 5}
+\author{Abel Siqueira \\ Kally Chung}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Mais Programa\c{c}\~ao]{}
+
+\begin{frame}
+\frametitle{Mais Programa\c{c}\~ao}
+
+\begin{itemize}
+\item<1-> Agora que aprendemos a programar, voltemos \`as fun\c{c}\~oes.
+\item<2-> Vamos ver primeiramente, uma funcionalidade das fun\c{c}\~oes presente tamb\'em em outras linguagens: Recurs\~ao.
+\item<3-> Veremos tamb\'em algumas fun\c{c}\~oes que recebem fun\c{c}\~oes como argumentos, e tamb\'em como faz\^e-las.
+\end{itemize}
+
+\end{frame}
+\subsection[Recurs\~ao]{}
+
+\begin{frame}
+\frametitle{Recurs\~ao}
+
+Recurs\~ao \'e o m\'etodo de se definir uma fun\c{c}\~ao onde se utiliza a pr\'opria fun\c{c}\~ao no meio do c\'odigo. \pause
+Um exemplo b\'asico \'e o do c\'alculo do fatorial.
+\pause
+
+Lembre-se que, para um n\'umero $n \in \mathbb{N}$, o fatorial $n!$ \'e definido por
+$$n! = \left\{
+\begin{array}{cc}
+1, & \mbox{se } n = 0; \\
+n.(n-1).\dots.2.1 & \mbox{para } n > 0;
+\end{array}
+\right.$$
+\pause
+Note que podemos escrever o fatorial da seguinte maneira:
+$$n! = \left\{
+\begin{array}{cc}
+1, & \mbox{se } n = 0 \mbox{ ou } n = 1; \\
+n.(n-1)! & \mbox{para } n > 1;
+\end{array}
+\right.$$
+\pause
+Perceba que o fatorial \'e definido a partir de um fatorial.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Recurs\~ao}
+
+Ent\~ao podemos definir a fun\c{c}\~ao para calcular fatorial como
+\pause
+\begin{verbatim}
+function f = fatorial(n)
+
+if (n == 0) || (n == 1)
+  f = 1;
+elseif n > 1
+  f = n*fatorial(n-1);
+else
+  f = 0;
+end
+\end{verbatim}
+\pause
+Este programa calcula o fatorial de um n\'umero natural, ou retorna o valor 0 se o n\'umero n\~ao for natural.
+
+\end{frame}
+
+\subsection[Fun\c{c}\~oes como Argumentos]{}
+
+\begin{frame}[fragile]
+\frametitle {Fun\c{c}\~oes como Argumentos}
+
+Algumas fun\c{c}\~oes recebem outras fun\c{c}\~oes como argumentos. Por exemplo, a fun\c{c}\~ao {\tt feval}.
+\pause
+
+A sintaxe da fun\c{c}\~ao \'e dada por
+\begin{verbatim}
+[<var_saida>] = feval(<nome_da_funcao>,<var_entrada>)
+\end{verbatim}
+\pause
+
+Essa fun\c{c}\~ao simplesmente calcula a fun\c{c}\~ao passada em {\tt <nome\_da\_funcao} com os argumentos  {\tt <var\_entrada>} e retorna os argumentos {\tt <var\_saida>}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle {Fun\c{c}\~oes como Argumentos}
+
+Por exemplo, podemos usar a fun\c{c}\~ao para calcular a exponencial de um n\'umero:
+\pause 
+\begin{verbatim}
+>> f = feval(`exp',5);
+f = 
+     x
+\end{verbatim}
+\pause
+
+Essa chamada \'e equivalente a
+\pause
+
+\begin{verbatim}
+>> f = exp(5)
+f =
+     x
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}
+\frametitle {Fun\c{c}\~oes como Argumentos}
+
+O {\tt feval} \'e bastante \'util quando queremos fazer uma fun\c{c}\~ao que recebe uma outra fun\c{c}\~ao gen\'erica. Por exemplo, para calcular a aproxima\c{c}\~ao da integral:
+\pause
+
+Lembre-se que podemos aproximar a integral de uma fun\c{c}\~ao por um somat\'orio, com a regra do trap\'ezio:
+\pause
+
+{\scriptsize
+\begin{eqnarray*}
+ \int_{x_1}^{x_n} f(x) dx = \frac{h}{2}[f(x_1)+2f(x_2)+2f(x_3)+\dots+2f(x_{n-1})+f(x_n)],
+\end{eqnarray*}
+}
+onde $h = \frac{x_n-x_1}{n-1}$. Vamos fazer um programa que calcula essa aproxima\c{c}\~ao dados $x_1$,$x_n$ e $n$.
+
+\end{frame}
+
+\begin{frame}[fragile]
+ \frametitle {Fun\c{c}\~oes como Argumentos}
+
+Nosso programa deve ter a seguinte cara:
+\pause
+
+\begin{verbatim}
+function I = integral(funcao,a,b,n)
+
+h = (b-a)/(n-1);
+x = a:h:b;
+I = 0;
+for i = 2:n-1
+  I = I + feval(funcao,x(i));
+end
+I = 2*I;
+I = I + feval(funcao,x(1)) + feval(funcao,x(n));
+I = I*h/2;
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}
+\frametitle {Fun\c{c}\~oes como Argumentos}
+Agora vamos programar o m\'etodo de Newton para encontrar zeros de fun\c{c}\~oes
+\begin{itemize}
+ \item<2-> Inicialmente escreva uma rotina com a fun\c{c}\~ao que voc\^e quer encontrar o zero. Escolha uma fun\c{c}\~ao deriv\'avel e com derivada n\~ao nula perto desse zero.
+ \item<3-> Calcule a derivada desta fun\c{c}\~ao.
+ \item<4-> Escreva uma rotina com a derivada dessa fun\c{c}\~ao.
+ \item<5-> Escreva uma rotina que recebe a fun\c{c}\~ao, a derivada e um ponto inicial e retorna a aproxima\c{c}\~ao do ponto final.
+ \item<6-> Lembre que a rotina necessita de um crit\'erio de parada e de um crit\'erio para impedir que fa\c{c}a loop infinito.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle {Fun\c{c}\~oes como Argumentos}
+Lembre-se que o m\'etodo de Newton \'e dado por:
+\begin{enumerate}
+\item<2-> Dados $f = f(x)$, $x_0$, $\varepsilon > 0$ e $k = 0$ fa\c{c}a
+\item<3-> Se $\modulo{f(x_k)} < \varepsilon$ PARE
+\item<4-> $x_{k+1} = x_k - f(x_k)/f'(x_k)$
+\item<5-> $k \leftarrow k+1$ e v\'a para o passo 2
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle {Fun\c{c}\~oes como Argumentos}
+A sua fun\c{c}\~ao deve ter ficado mais ou menos assim:
+\pause
+
+{\ssiz
+\begin{verbatim}
+function [x,k] = metodo_newton(fun,der,x)
+tol = 1e-12;
+fx = feval(fun,x);
+dx = feval(der,x);
+x2 = x - fx/dx;
+k = 0;
+while abs(fx) >= tol
+  x = x2;
+  x2 = x2 - fx/dx;
+  fx = feval(fun,x);
+  dx = feval(der,x);
+  k = k + 1;
+  if k > 1000
+    return
+  end
+end\end{verbatim}
+}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Fun\c{c}\~oes como Argumentos}
+
+Veja um exemplo da execu\c{c}\~ao do problema anterior:
+
+{\ssiz
+\begin{multicols}{2}
+\begin{verbatim}
+function f = funcao(x)
+
+f = x^2-1
+\end{verbatim}
+\begin{verbatim}
+function f = derivada(x)
+
+f = 2*x;
+\end{verbatim}
+\end{multicols}
+
+\pause
+\delim
+
+\begin{verbatim}
+>> x = 10;
+>> [x,k] = metodo_newton(`funcao',`derivada',x)
+x =
+    1.0000
+k =
+     8
+>> [x,k] = metodo_newton(`sin',`cos',x)
+x = 
+  2.9236e-013
+k =
+     4
+\end{verbatim}
+}
+\end{frame}
+
+\subsection[Function Handle]{}
+
+\begin{frame}
+\frametitle{Function Handle}
+
+\begin{itemize}
+ \item<1-> Veremos agora uma ferramenta do Matlab chamada de Function Handle.
+ \item<2-> Function Handle serve para criar fun\c{c}\~oes matem\'aticas de uma maneira f\'acil e r\'apida.
+ \item<3-> Usando Function Handle n\~ao \'e necess\'ario criar um arquivo m sempre que precisarmos de uma fun\c{c}\~ao matem\'atica.
+ \item<4-> Muitas rotinas que aceitam fun\c{c}\~oes por arquivos m tamb\'em aceitam Function Handle, por exemplo o {\tt feval}.
+ \item<5-> Assim, podemos criar fun\c{c}\~oes que aceitam tanto arquivos m quanto Function Handle. Por exemplo nossa fun\c{c}\~ao anterior.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+ \frametitle{Function Handle}
+
+Para criar uma fun\c{c}\~ao por function handle usamos a seguinte sintaxe:
+\pause
+
+\begin{verbatim}
+<nome> = @(<variaveis>) <definicao>
+\end{verbatim}
+\pause
+Exemplos:
+{\scriptsize
+\begin{verbatim}
+>> f = @(x) exp(x);
+>> f(1)
+ans =
+     2.71828
+>> g = @(x,n) x^n - 1;
+>> g(2,3)
+ans =
+     8
+>> v = @(t,s) [t*s, sqrt(t^2 + s^2)];
+>> v(3,4)
+ans =
+    12     5
+\end{verbatim}}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Function Handle}
+
+Tamb\'em podemos fazer simplesmente
+
+{\ssiz
+\begin{verbatim}
+>> f = @exp
+>> f(2)
+ans =
+     7.3891
+\end{verbatim}
+}
+
+\pause
+
+Tamb\'em \'e poss\'ivel criar Function Handles a partir de outros Funcion Handles
+
+{\ssiz
+\begin{verbatim}
+>> f = @(x) exp(x)
+>> g = @(x) log(f(x))
+>> g(2)
+ans =
+     2
+\end{verbatim}
+}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Function Handle}
+
+Podemos fixar uma vari\'avel e criar um Handle para a outra.
+\pause
+Veja a nossa rotina do m\'etodo de Newton com Function Handle:
+{\ssiz
+\begin{verbatim}
+>> [x,k] = metodo_newton(@(x) x^2-1, @(x) 2*x, 10)
+x =
+     1
+k = 
+     8
+>> f = @(x,n) x^2-n^2;
+>> g = @(x) 2*x
+>> [x,k] = metodo_newton(@(x) f(x,1), g, 10)
+x =
+     1
+k = 
+     8
+>> [x,k] = metodo_newton(@(x) f(x,3), @(x) 2*x, 10)
+x =
+     3
+k = 
+     6
+\end{verbatim}
+}
+
+\end{frame}
+
+
+\section[Exerc\'icios]{}
+
+\begin{frame}
+\frametitle{Exerc\'icios}
+
+\begin{enumerate}
+\item Considere a seguinte seque\^encia:
+$$x_{k+1} = \left\{
+\begin{array}{ll}
+x_k/2, & \mbox{se } x_k \mbox{ \'e par} \\
+3x_k + 1, & \mbox{se } x_k \mbox{ \'e \'impar}
+\end{array}
+\right.$$
+Conjectura-se que, para qualquer $x_0 \in \mathbb{N}^{*}$, em algum momento aparece o n\'umero 1 nessa sequ\^encia. Escreva uma rotina que recebe o ponto $x_0$ e que calcula quantas itera\c{c}\~oes demora para encontrar o ponto 1, usando recurs\~ao.
+\item Crie uma fun\c{c}\~ao com Function Handle que recebe $a$,$b$,$c$ e $x$ e que retorna $ax^2+bx+c$.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Exerc\'icios}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Crie uma fun\c{c}\~ao com Function Handle que calcula uma aproxima\c{c}\~ao para a derivada de uma fun\c{c}\~ao dada. Lembre-se que
+$$\lim_{h\rightarrow0}\frac{f(x+h)-f(x)}{h}=f'(x)$$
+\item Crie uma rotina que recebe uma fun\c{c}\~ao e sua derivada e um ponto $x$ e calcula um valor $h$ da forma $h = 2^k$ de modo que a aproxima\c{c}\~ao anterior seja precisa at\'e uma toler\^ancia dada. Teste seu algoritmo com:
+\begin{enumerate}
+\item $f(x) = e^x, \qquad x = 1$
+\item $f(x) = 1 - x^2, \qquad x = 4$
+\item $f(x) = sin(x), \qquad x = \pi/4$
+\item $f(x) = x + 1, \qquad x = 10$
+\end{enumerate}
+\end{enumerate}
+\end{frame}
+
+\end{document}

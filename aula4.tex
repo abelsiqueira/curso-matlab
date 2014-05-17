@@ -1,0 +1,549 @@
+\documentclass{beamer}
+
+\newcommand{\ssiz}{\scriptsize}
+\newcommand{\delim}{\line(1,0){290}}
+\newcommand{\norma}[1]{\Vert #1 \Vert_2}
+\newcommand{\modulo}[1]{\vert #1 \vert}
+\newcommand{\prodint}[2]{\langle #1,#2 \rangle}
+\newcommand{\barrav}[1]{\line(0,1){#1}}
+
+\colorlet{teal}[rgb]{blue!50!green}
+%\setbeamercolor{cordotitulo}{bg=green!30!black,fg=white}
+\useinnertheme{rounded}
+\setbeamercolor{structure}{fg=teal!80!blue}
+%\useoutertheme{smoothbars}
+%\useoutertheme{shadow}
+\useoutertheme[height=1 cm,width=1.5 cm]{sidebar}
+%\usecolortheme{crane}
+%\setbeamerfont{frametitle}{shape=\itshape}
+\setbeamercolor{palette primary}{bg=teal!80!blue,fg=white}
+\setbeamercolor{palette secondary}{bg=white,fg=white} %cor do logo
+\setbeamercolor{palette tertiary}{bg=blue!70!black,fg=white}
+\setbeamercolor{palette quaternary}{bg=white,fg=teal!80!blue}
+\setbeamercolor{sidebar}{bg=teal!80!blue}
+%\setbeamercolor{palette sidebar primary}{bg=red,fg=black}
+%\setbeamercolor{palette sidebar secondary}{bg=red,fg=black}
+\setbeamercolor{palette sidebar tertiary}{fg=white} %Autor no sidebar
+\setbeamercolor{palette sidebar quaternary}{fg=white} %Titulo no sidebar
+\setbeamercolor{section in sidebar}{fg=teal!80!blue,bg=white} %A cor naum
+\setbeamercolor{subsection in sidebar}{fg=teal!80!blue,bg=white} %A cor naum
+%ativa parece ser uma media das duas
+%\setbeamercolor{section in sidebar current}{fg=red}
+\setbeamercolor{frametitle}{fg=white,bg=teal!80!blue} %mudar
+%fg aqui
+\setbeamercolor{title}{bg=teal!80!blue,fg=white}
+\setbeamerfont{title}{series=\bf}
+\setbeamercolor{author}{bg=teal!80!blue,fg=white}
+\setbeamerfont{author}{series=\bf}
+\setbeamercolor{normal text}{bg=white,fg=teal!50!black}
+\logo{\includegraphics[scale=0.06]{matlab_logo.jpg}}
+
+
+\title{Introdu\c{c}\~ao ao MatLab \\ Aula 4}
+\author{Abel Siqueira \\ Kally Chung}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Programa\c{c}\~ao]{}
+
+\begin{frame}
+ \frametitle{Programa\c{c}\~ao}
+
+\begin{itemize}
+ \item O Matlab tamb\'em pode ser usado como linguagem de programa\c{c}\~ao.
+ \item A sintaxe dos comandos \'e bem parecida com C e Fortran.
+ \item \'E muito mais f\'acil programar no Matlab pois a maior parte das coisas j\'a est\'a implementada.
+ \item N\~ao \'e necess\'ario compilar.
+ \item Os comandos apresentados n\~ao precisam ser feitos em arquivos M.
+\end{itemize}
+
+\end{frame}
+
+\subsection[Operadores Relacionais]{}
+
+\begin{frame}
+\frametitle{Operadores Relacionais}
+
+\begin{itemize}
+ \item<1-> O Matlab, assim como outras linguagens de computador, precisa fazer compara\c{c}\~oes entre elementos.
+ \item<2-> Ele considera uma proposi\c{c}\~ao verdadeira como 1 e uma proposi\c{c}\~ao falsa como 0.
+ \item<3-> Dessa maneira, ao perguntarmos se 1 \'e maior que 0 receberemos a resposta 1, e se perguntarmos se 1 \'e igual a zero, receberemos a resposta 0.
+ \item<4-> Os operadores s\~ao:
+\end{itemize}
+\pause \pause \pause \pause
+{\scriptsize
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+{\tt > } & Maior & {\tt < } & Menor \\ \hline 
+{\tt >= } & Maior ou igual & {\tt <= } & Menor ou igual \\ \hline 
+{\tt == } & Igual & {\tt $\sim$= } & Diferente \\ \hline  
+\end{tabular}
+\end{center}
+}
+\pause
+Note que {\tt =} n\~ao \'e um operador relacional, e sim um operador de atribui\c{c}\~ao.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operadores Relacionais}
+
+{\scriptsize
+\begin{center}
+\begin{minipage}{3 cm}
+\begin{verbatim}
+>> 1 > 0
+ans =
+     1
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{3 cm}
+\begin{verbatim}
+>> 1 == 0
+ans =
+     0
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{3 cm}
+\begin{verbatim}
+>> valor = 2 >= 1
+valor =
+     1
+\end{verbatim}
+\end{minipage}
+\end{center}
+}
+\delim
+\pause
+
+O Matlab compara vetores e matrizes elemento a elemento:
+{\scriptsize
+\begin{verbatim}
+>> v = [0 1 2 3];
+>> w = [2 1 0 -1];
+>> v == w
+ans =
+     0     1     0     0
+>> v > w
+ans =
+     0     0     1     1
+>> w >= 0
+ans =
+     1     1     1     0
+\end{verbatim}
+}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operadores Relacionais}
+Os seguintes comandos s\~ao \'uteis para vetores. Para matrizes, os comandos s\~ao realizados por colunas.
+{\scriptsize
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+{\tt any(<cond\_sobre\_v>)} & Verifica se algum elemento de v satisfaz a \\
+& condi\c{c}\~ao. \\ \hline
+{\tt all(<cond\_sobre\_v>)} & Verifica se todos os elementos de v satisfazem \\
+& a condi\c{c}\~ao. \\ \hline
+{\tt find(<cond\_sobre\_v>)} & Retorna um vetor com os \'indices de v que \\
+& satisfazem a condi\c{c}\~ao \\ \hline
+\end{tabular}
+\end{center}}
+\pause
+
+Exemplo:
+{\scriptsize
+\begin{center}
+\begin{minipage}{3 cm}
+\begin{verbatim}
+>> v = [-1 0 1];
+>> any(v == 0)
+ans =
+     1
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{3 cm}
+\begin{verbatim}
+>> all(v > 0)
+ans =
+     0
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{3 cm}
+\begin{verbatim}
+>> find(v <= 0)
+ans =
+     1     2
+\end{verbatim}
+\end{minipage}
+\end{center}}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operadores L\'ogicos}
+
+\begin{itemize}
+\item<1->Os operadores l\'ogicos s\~ao: {\tt \&, |, $\sim$}. S\~ao operadores para senten\c{c}as com resultado 1 ou 0, isto \'e, verdadeiro ou falso.
+\item<2->O operador {\tt \&}, chamado de {\bf e}, \'e usado como \verb+A & B+, e \'e verdadeiro apenas se A e B s\~ao verdadeiros.
+\item<3->O operador {\tt |}, chamado de {\bf ou}, \'e usado como \verb+A | B+, e \'e verdadeiro se A ou B s\~ao verdadeiros.
+\item<4->O operador $\sim$, chamado de {\bf n\~ao}, \'e usado como {\tt $\sim$A}, e \'e verdadeiro se A \'e falso, e falso se A \'e verdadeiro.
+\end{itemize}
+\pause \pause \pause \pause
+{\scriptsize
+\begin{verbatim}
+>> (1 == 0) | (2 > 1)
+ans =
+     1
+>> (1 == 0) & (2 > 1)
+ans =
+     0
+\end{verbatim}}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Operadores L\'ogicos}
+
+O Matlab tamb\'em faz compara\c{c}\~oes l\'ogicos com vetores, elemento a elemento:
+{\small
+\begin{verbatim}
+>> v = 0:6
+v = 
+     0     1     2     3     4     5     6
+>> M = v >= 2
+M =
+     0     0     1     1     1     1     1
+>> m = v <= 5
+m =
+     1     1     1     1     1     1     0
+>> M & m
+ans =
+     0     0     1     1     1     1     0
+\end{verbatim}
+}
+\end{frame}
+
+\subsection[Os Comandos if, elseif, else]{}
+
+\begin{frame}[fragile]
+\frametitle{Os Comandos {\tt if, elseif, else}}
+
+\begin{itemize}
+\item<1-> O comando {\tt if} \'e usado quando queremos que algo aconte\c{c}a somente se um determinado requisito \'e satisfeito.
+\item<2-> O comando {\tt elseif} \'e usado ap\'os o {\tt if} quando queremos incluir uma nova condi\c{c}\~ao, que acontece se um outro requisito \'e satisfeito e se os requisitos pedidos antes n\~ao foram satisfeitos.
+\item<3-> O comando {\tt else} \'e usado ap\'os todos os outros e indica uma a\c{c}\~ao que acontece apenas se nenhum outro requisito foi satisfeito.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Os Comandos {\tt if, elseif, else}}
+
+A seguir est\'a a sintaxe geral para utilizar o comando:
+
+{\scriptsize
+\begin{verbatim}
+if <condicao1>
+  <acao1>
+elseif <condicao2>
+  <acao2>
+elseif <condicao3>
+  <acao3>
+.
+.
+.
+elseif <condicaon>
+  <acaon>
+else
+  <acaofinal>
+end
+\end{verbatim}
+}
+Pode-se omitir {\tt elseif} e {\tt else}, mas nunca {\tt if} e {\tt end}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Comandos {\tt if, elseif, else}}
+
+Como exemplo, vamos fazer um programa que calcula o sinal de um elemento, isto \'e, a fun\c{c}\~ao deve retornar 1 se o n\'umero for positivo, 0 se o n\'umero for 0, e -1 se o n\'umero for negativo.
+\pause
+{\scriptsize
+\begin{verbatim}
+function s = sinal(a)
+
+if a > 0
+  s = 1;
+elseif a == 0
+  s = 0;
+else
+  s = -1;
+end
+\end{verbatim}
+}
+
+Note que a compara\c{c}\~ao de igualdade \'e feita usando {\tt ==}. Se tentarmos usar {\tt =} o programa gerar\'a erros.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Comandos {\tt if, elseif, else}}
+
+Existe ainda o comando {\tt return} que pode ser usado em qualquer parte do programa, mas que tende a ser usado com o {\tt if}. Esse comando para a execu\c{c}\~ao do programa imediatamente. Por exemplo:
+\pause
+
+{\small
+\begin{verbatim}
+function y = calculaAx(A,x)
+
+[m,n] = size(A,2);
+if numel(x) ~= n
+  return
+end
+.
+.
+.
+
+\end{verbatim}
+}
+\end{frame}
+
+\subsection[O Comando while]{}
+
+\begin{frame}[fragile]
+\frametitle{O Comando {\tt while}}
+
+O {\tt while} \'e um comando de repeti\c{c}\~ao (loop). Ele serve para repetir uma a\c{c}\~ao at\'e que uma certa condi\c{c}\~ao seja realizada. A sintaxe usual para o {\tt while} \'e:
+
+\begin{verbatim}
+while <condicao>
+  <acao>
+end
+\end{verbatim}
+
+Os comandos descritos em {\tt <acao>} ser\~ao repetidos at\'e que a condi\c{c}\~ao {\tt <condicao>} seja verdadeira.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{O Comando {\tt while}}
+
+Para exemplificar, vamos calcular qual o menor n\'umero de Fibonacci maior ou igual a um certo valor dado.
+\pause
+
+Lembre-se que os n\'umeros de Fibonacci s\~ao dados por $F_1 = F_2 = 1$ e $F_{k+2}=F_{k+1}+F_k$, $k=1,2,\dots$. Suponha $M>1$.
+\pause
+{\scriptsize
+\begin{verbatim}
+function k = qualFehmaiorque(M)
+
+F = [1 1 2];
+k = 3;
+while F(k) < M
+  k = k + 1;
+  F(k) = F(k-1) + F(k-2);
+end
+\end{verbatim}}
+
+Enquanto os n\'umeros de Fibonacci estiverem satisfazendo a condi\c{c}\~ao {\tt F(k) < M}, isto \'e, forem menores que M, o programa continuar\'a a gerar n\'umeros de Fibonacci.
+\end{frame}
+
+\begin{frame}
+\frametitle{O comando {\tt while}}
+
+\begin{itemize}
+ \item<1-> Tamb\'em \'e poss\'ivel utilizar outros dois comandos dentro do comando {\tt while}. S\~ao o {\tt break} e o {\tt continue}.
+ \item<2-> Estes comandos servem para interromper o loop atual, sem interromper a execu\c{c}\~ao do programa.
+ \item<3-> Ao ler o comando {\tt break}, o programa sai imediatamente do loop, mesmo que n\~ao tenha chegado ao fim das instru\c{c}\~oes. No entanto o programa continua logo ap\'os o fim do {\tt end} relacionado ao {\tt while}.
+ \item<4-> O comando {\tt continue} funciona como o {\tt break}, mas ele volta para a condi\c{c}\~ao do while.
+\end{itemize}
+
+\end{frame}
+
+\subsection[O Comando for]{}
+
+\begin{frame}[fragile]
+ \frametitle{O comando {\tt for}}
+
+O comando {\tt for} tamb\'em \'e um comando de repeti\c{c}\~ao. A principal diferen\c{c}a dele para o {\tt while} est\'a no fato de que ele ir\'a fazer um n\'umero de itera\c{c}\~oes j\'a determinado, e vai ter uma vari\'avel com um valor que muda durante cada itera\c{c}\~ao.
+\pause
+
+A sintaxe do comando \'e:
+\begin{verbatim}
+for <variavel>=<vetor>
+  <acao>
+end
+\end{verbatim}
+\pause
+
+Os comandos de {\tt <acao>} ser\~ao executados um n\'umero de vezes igual ao tamanho do vetor {\tt <vetor>}. Durante a k-\'esima itera\c{c}\~ao o valor de {\tt <variavel>} ser\'a igual ao k-\'esimo elemento de {\tt <vetor>}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+ \frametitle{O Comando {\tt for}}
+
+O modo mais utilizado desse comando segue a cria\c{c}\~ao de vetor descrita na aula 2. As sintaxes mais utilizadas s\~ao
+{\scriptsize
+\begin{verbatim}
+for <variavel> = 1:n
+  <acao>
+end
+
+for <variavel> = <inicio>:<fim>
+  <acao>
+end
+
+for <variavel> = <inicio>:<passo>:<fim>
+  <acao>
+end
+\end{verbatim}
+}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{O Comando {\tt for}}
+Como exemplo, vamos escrever uma fun\c{c}\~ao que calcula a soma dos elementos de um vetor
+\pause
+\delim
+\begin{verbatim}
+function s = soma(v)
+
+n = lenght(v);
+
+s = 0;
+for i = 1:n
+  s = s + v(i);
+end
+\end{verbatim}
+
+\pause
+\delim
+
+O Comando {\tt for} tamb\'em aceita os comandos {\tt break} e {\tt continue}.
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{O Comando {\tt for}}
+
+Podemos fazer o programa anterior de outra maneira:
+\pause
+
+\begin{verbatim}
+function s = soma2(v)
+
+s = 0;
+for x = v
+  s = s + x;
+end
+\end{verbatim}
+
+\pause
+
+Essa maneira, no entanto, n\~ao \'e a usual.
+
+\end{frame}
+
+
+\subsection[O Comando switch]{}
+
+\begin{frame}[fragile]
+ \frametitle{O Comando {\tt switch}}
+O comando {\tt switch} serve para escolher uma a\c{c}\~ao diferente para cada valor de uma vari\'avel. Ele funciona da seguinte forma:
+\pause
+\delim
+
+{\scriptsize
+\begin{minipage}{4 cm}
+\begin{verbatim}
+switch <variavel>
+  case <valor1>
+    <acao1>
+  case {<valor2>,<valor3>}
+    <acao2>
+  .
+  .
+  .
+  otherwise
+    <acaofinal>
+end
+\end{verbatim}
+\end{minipage}}
+\pause
+\begin{minipage}{0.2 cm}
+\barrav{100}
+\end{minipage}
+\begin{minipage}{6 cm}
+Se {\tt <variavel>} for igual a algum dos valores {\tt <valor1>,<valor2>,\dots}, a a\c{c}\~ao correspondente \'e realizada. Se nenhum valor foi igual ao da vari\'avel, ent\~ao a a\c{c}\~ao {\tt <acaofinal>} \'e realizada.
+\end{minipage}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{O comando {\tt switch}}
+
+Como exemplo considere o seguinte programa que transforma uma medida em cm em outra medida.
+
+{\scriptsize
+\begin{verbatim}
+function [y,medidanova] = transforma(x,medida)
+
+switch medida
+  case 'm'
+    y = x/100;
+    medidanova = 'm';
+  case 'mm'
+    y = 10*x;
+    medidanova = 'mm';
+  case 'pes'
+    y = 30,48*x;
+    medidanova = 'pes';
+  otherwise
+  	y = x;
+  	medidanova = 'cm';
+end
+\end{verbatim}
+}
+\end{frame}
+
+\section[Exerc\'icios]{}
+
+\begin{frame}
+ \frametitle{Exerc\'icios}
+{\ssiz
+\begin{enumerate}
+\item Lembre-se que, se $y = Ax$, com $A \in \mathbb{R}^{m\times n}$, ent\~ao
+$$y_i = \sum_{j = 1}^na_{ij}x_j, \qquad i = 1,\dots,m.$$
+Fa\c{c}a um programa que recebe $A$ e $x$, verifica se as dimens\~oes est\~ao corretas e faz esse c\'alculo.
+\item Definimos as normas 1, 2 e infinito para vetores por {\ssiz
+$$\Vert x\Vert_1 = \sum_{i = 1}^n \modulo{x_i}, \qquad \norma{x} = \sqrt{\sum_{i=1}^nx_i^2}, \qquad \Vert x\Vert_{\infty} = \max_i \modulo{x_i}$$
+}
+Fa\c{c}a um programa que recebe um vetor $x$ e uma outra vari\'avel que pode ser {\tt 1, 2} ou {\tt `inf'} e que calcula a norma respectiva em cada caso. N\~ao use {\tt if}.
+\end{enumerate}
+}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Exerc\'icios}
+
+{\ssiz
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item Para encontrar uma aproxima\c{c}\~ao do n\'umero $\sqrt{c}$, $c > 0$ podemos utilizar a seguinte sequ\^encia:
+$$x_{k+1} = \frac{x_k}{2} + \frac{c}{2x_k}, \qquad x_0 = c.$$
+Repetimos esse processo at\'e que dois n\'umeros consecutivos dessa sequ\^encia estejam suficientemente pr\'oximos. O \'ultimo elemento obtido \'e a aproxima\c{c}\~ao. Escreva uma rotina que receba $c$ e retorne a aproxima\c{c}\~ao para $\sqrt{c}$. O programa deve verificar se $c > 0$.
+
+\end{enumerate}
+}
+
+\end{frame}
+
+
+\end{document}

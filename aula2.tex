@@ -1,0 +1,408 @@
+\documentclass{beamer}
+
+\newcommand{\delim}{\line(1,0){290}}
+\newcommand{\ssiz}{\scriptsize}
+
+%\setbeamercolor{cordotitulo}{bg=green!30!black,fg=white}
+\useinnertheme{rounded}
+\setbeamercolor{structure}{fg=teal!80!blue}
+%\useoutertheme{smoothbars}
+%\useoutertheme{shadow}
+\useoutertheme[height=1 cm,width=1.5 cm]{sidebar}
+%\usecolortheme{crane}
+%\setbeamerfont{frametitle}{shape=\itshape}
+\setbeamercolor{palette primary}{bg=teal!80!blue,fg=white}
+\setbeamercolor{palette secondary}{bg=white,fg=white} %cor do logo
+\setbeamercolor{palette tertiary}{bg=blue!70!black,fg=white}
+\setbeamercolor{palette quaternary}{bg=white,fg=teal!80!blue}
+\setbeamercolor{sidebar}{bg=teal!80!blue}
+%\setbeamercolor{palette sidebar primary}{bg=red,fg=black}
+%\setbeamercolor{palette sidebar secondary}{bg=red,fg=black}
+\setbeamercolor{palette sidebar tertiary}{fg=white} %Autor no sidebar
+\setbeamercolor{palette sidebar quaternary}{fg=white} %Titulo no sidebar
+\setbeamercolor{section in sidebar}{fg=teal!80!blue,bg=white} %A cor naum
+\setbeamercolor{subsection in sidebar}{fg=teal!80!blue,bg=white} %A cor naum
+%ativa parece ser uma media das duas
+%\setbeamercolor{section in sidebar current}{fg=red}
+\setbeamercolor{frametitle}{fg=white,bg=teal!80!blue} %mudar
+%fg aqui
+\setbeamercolor{title}{bg=teal!80!blue,fg=white}
+\setbeamerfont{title}{series=\bf}
+\setbeamercolor{author}{bg=teal!80!blue,fg=white}
+\setbeamerfont{author}{series=\bf}
+\setbeamercolor{normal text}{bg=white,fg=teal!50!black}
+\logo{\includegraphics[scale=0.06]{matlab_logo.jpg}}
+
+\title{Introdu\c{c}\~ao ao MatLab \\ Aula 2}
+\author{Abel Siqueira \\ Kally Chung}
+\date{}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section[Vetores e Matrizes]{}
+\begin{frame}[fragile]
+
+  \frametitle{Vetores e Matrizes}
+  
+  \begin{itemize}
+  \item<1-> Vetores e matrizes s\~ao os principais elementos do Matlab.
+  \item<2-> A maior parte dos comandos do Matlab s\~ao para matrizes.
+  \item<3-> Tudo s\~ao matrizes, inclusive vetores.
+  \item<4-> Utilizamos colchetes para escrever a matriz. Deve-se escrever a matriz por linhas, separando cada elemento da linha por v\'irgula ou espa\c{c}o, e cada mudan\c{c}a de linha por um ponto-e-v\'irgula.
+  \item<5-> O Matlab utiliza vetores deitados. Fique atento.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+
+\frametitle{Vetores e Matrizes} 
+Por exemplo, para a matriz
+$$\left[\begin{array}{ccc}1 & 2 & 3 \\ 4 & 5 & 6\end{array}\right]$$
+devemos escrever {\tt [1 2 3; 4 5 6]} ou {\tt [1,2,3; 4,5,6]}
+\pause
+\delim
+\begin{verbatim}
+>> A = [1 2 3; 4 5 6]
+A = 
+     1     2     3
+     4     5     6
+>> v = [1 0 -1]
+v =
+     1     0    -1
+\end{verbatim}
+  
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vetores e Matrizes}
+Para acessar o elemento da linha {\tt i} e coluna {\tt j} de uma matriz {\tt A} devemos usar {\tt A(i,j)}. Para vetores, basta apenas um argumento.
+\pause
+\delim
+\begin{center}
+\begin{minipage}{4 cm}
+\begin{verbatim}
+>> A(2,3)
+ans =
+     6
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{4 cm}
+\begin{verbatim}
+>> v(3)
+ans =
+    -1
+\end{verbatim}
+\end{minipage}
+\end{center}
+\delim
+\pause
+
+Voc\^e tamb\'em pode usar um vetor de \'indices para acessar alguns elementos:
+\pause
+\delim
+\begin{center}
+\begin{minipage}{4 cm}
+\begin{verbatim}
+>> I = [1 3];
+>> A(2,I)
+ans =
+     4     6
+\end{verbatim}
+\end{minipage}
+\begin{minipage}{4 cm}
+\begin{verbatim}
+>> I = [1 3];
+>> v(I)
+ans =
+     1    -1
+\end{verbatim}
+\end{minipage}
+\end{center}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vetores e Matrizes}
+\begin{verbatim}
+>> A = [1 2 3; 4 5 6; 7 8 9]
+A =
+     1     2     3
+     4     5     6
+     7     8     9
+>> I = [2 3]; J = [1 3];
+>> A(I,J)
+ans =
+     4     6
+     7     9
+\end{verbatim}
+
+\end{frame}
+\begin{frame}[fragile]
+\frametitle{Vetores e Matrizes}
+Voc\^e tamb\'em pode usar {\tt :} para acessar todos os elementos da linha ou coluna:
+\pause
+\delim
+\begin{verbatim}
+>> A(2,:)
+ans =
+     4     5     6
+>> A(:,1)
+ans =
+     1
+     4
+     7
+\end{verbatim}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Vetores e Matrizes}
+Podamos contatenar duas matrizes facilmente:
+\begin{verbatim}
+>> A = [1 2; 3 4];
+>> B = [5 6; 7 8];
+>> C = [A B]
+C =
+     1     2     5     6
+     3     4     7     8
+>> D = [A;B]
+D =
+     1     2
+     3     4
+     5     6
+     7     8
+\end{verbatim}
+\end{frame}
+
+\subsection[Opera\c{c}\~oes Matriciais]{}
+
+\begin{frame}[fragile]
+\frametitle{Opera\c{c}\~oes Matriciais}
+
+As opera\c{c}\~oes matriciais est\~ao todas implementadas no Matlab, mas fique atento \`as dimens\~oes:
+
+\delim
+{\scriptsize
+\begin{center}
+\begin{minipage}{4 cm}
+\begin{verbatim}
+>> A = [1 2 3; 4 5 6]
+A = 
+     1     2     3
+     4     5     6
+>> B = [1 2; 3 4; 5 6]
+B = 
+     1     2
+     3     4
+     5     6
+\end{verbatim}
+\end{minipage}\hspace{1.5 cm}
+\begin{minipage}{4 cm}
+\begin{verbatim}
+>> A*B
+ans =
+    22    28
+    49    64
+>> B*A
+ans =
+     9    12    15
+    19    26    33
+    29    40    51
+\end{verbatim}
+\end{minipage}
+\end{center}
+\delim
+\begin{center}
+\begin{minipage}{6 cm}
+\begin{verbatim}
+ >> A*A
+??? Error using ==> mtimes
+Inner matrix dimensions must agree.
+\end{verbatim}
+\end{minipage}
+\end{center}
+}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Opera\c{c}\~oes Matriciais}
+
+Al\'em das opera\c{c}\~oes matriciais b\'asicas {\tt +, -, *, \textasciicircum} (Note que n\~ao existe divis\~ao entre matrizes) o Matlab tamb\'em suporta as chamadas opera\c{c}\~oes Strassen. Essas s\~ao opera\c{c}\~oes entre matrizes de mesma dimens\~ao relacionando cada elemento de uma matriz com o elemento na posi\c{c}\~ao correspondente da outra. As opera\c{c}\~oes Strassen s\~ao: {\tt .*, ./, .\textbackslash, .\textasciicircum}.
+\pause
+Exemplo:
+\begin{eqnarray*}
+\left[
+\begin{array}{ccc}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{array}
+\right].*
+\left[
+\begin{array}{ccc}
+3 & 0 & -1 \\
+2 & 3 & 5
+\end{array}
+\right] & = &
+\left[
+\begin{array}{ccc}
+1*3 & 2*0 & 3*(-1) \\
+4*2 & 5*3 & 6*5
+\end{array}
+\right] \\
+& = &
+\left[
+\begin{array}{ccc}
+3 & 0 & -3 \\
+8 & 15 & 30
+\end{array}
+\right]
+\end{eqnarray*}
+\pause
+Para calcular a transposta de uma matriz, utilizamos {\tt '}, isto \'e, a transposta de {\tt A} \'e {\tt A'}.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Opera\c{c}\~oes Matriciais}
+\begin{verbatim}
+>> A = [1 2 3; 4 5 6];
+>> B = [3 0 -1; 2 3 5];
+>> C = A.*B
+C = 
+     3     0    -3
+     8    15    30
+>> D = C'
+D = 
+     3     8
+     0    15
+    -3    30
+\end{verbatim}
+\end{frame}
+
+\subsection[Cria\c{c}\~ao de Vetores]{}
+
+\begin{frame}[fragile]
+\frametitle{Cria\c{c}\~ao de Vetores}
+\begin{itemize}
+\item<1-> Podemos sempre utilizar o m\'etodo anterior para criar vetores e matrizes, mas se o vetor ou matriz \'e muito grande, o trabalho para escrev\^e-lo \'e exaustivo. Em casos particulares podemos utilizar recursos do Matlab para essa cria\c{c}\~ao.
+\item<2-> O caso mais comum de vetores \'e quando os n\'umeros est\~ao dispostos em uma sequ\^encia de progress\~ao aritm\'etica, isto \'e, quando os intervalos s\~ao igualmente espa\c{c}ados.
+\item<3-> Podemos usar {\tt :} para criar facilmente estes vetores, fazendo {\tt <inicio>:<fim>} ou {\tt <inicio>:<passo>:<fim>}. No primeiro caso {\tt <passo>} = 1.
+\item<4-> O vetor gerado come\c{c}a com {\tt <inicio>} e incrementa {\tt <passo>} a cada posi\c{c}\~ao at\'e um n\'umero n\~ao ultrapasse {\tt <fim>}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Cria\c{c}\~ao de Vetores}
+{\ssiz
+\begin{verbatim}
+>> 1:6
+ans =
+     1     2     3     4     5     6
+\end{verbatim}
+\pause
+\begin{verbatim}
+>> 1:6.5
+ans =
+     1     2     3     4     5     6
+\end{verbatim}
+\pause
+\begin{verbatim}
+>> 4:-0.1:3.5
+ans =
+    4.0000    3.9000    3.8000    3.7000    3.6000    3.5000
+\end{verbatim}
+}
+\end{frame}
+
+\subsection[Fun\c{c}\~oes para Vetores]{}
+\begin{frame}
+\frametitle{Fun\c{c}\~oes para Vetores}
+
+As seguintes fun\c{c}\~oes para vetores s\~ao extremamente \'uteis:
+{\scriptsize
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Comando & Explica\c{c}\~ao \\ \hline
+{\tt linspace(a,b,N)} & Gera N n\'umeros, O primeiro a, o \'ultimo b, \\
+& e igualmente espa\c{c}ados. \\ \hline
+{\tt logspace(a,b,N)} & Gera N n\'umeros, O primeiro $10^a$, o \'ultimo $10^b$, e\\
+& espa\c{c}ados logar\'itmicamente.\\ \hline
+{\tt lenght(v)} & Calcula o tamanho de v. \\ \hline
+{\tt dot(v,w)} & Calcula o produto interno de v e w. \\ \hline
+{\tt cross(v,w)} & Calcula o produto externo de v e w. \\ \hline
+{\tt norm(v,a)} & Calcula uma norma de v. a pode ser 1, 2 ou `inf'. \\
+& Pode-se omitir a, obtendo assim a norma 2. \\ \hline
+{\tt sum(v)} & Retorna a soma todos os elementos de v. \\ \hline
+{\tt prod(v)} & Retorna a multipli\c{c}\~ao todos os elementos de v. \\ \hline
+{\tt [M,k] = max(v)} & M \'e o valor m\'aximo de v e k \'e sua posi\c{c}\~ao. \\ \hline
+{\tt [M,k] = min(v)} & M \'e o valor m\'inimo de v e k \'e sua posi\c{c}\~ao. \\ \hline
+\end{tabular}
+\end{center}
+}
+\end{frame}
+
+\subsection[Cria\c{c}\~ao de Matrizes]{}
+
+\begin{frame}
+\frametitle{Cria\c{c}\~ao de Matrizes}
+
+\begin{itemize}
+\item<1-> Dentre os comandos poss\'iveis para se gerar matrizes, os tr\^es mais famosos s\~ao {\tt ones, zeros} e {\tt eye}.
+\item<2-> O comando {\tt ones(m,n)} gera uma matriz m por n onde todos os elementos s\~ao iguais a 1. Pode-se omitir o n, gerando assim uma matriz m por m.
+\item<3-> O comando {\tt zeros(m,n)} gera uma matriz m por n onde todos os elementos s\~ao iguais a 0. Pode-se omitir o n, gerando assim uma matriz m por m.
+\item<4-> O comando {\tt eye(m,n)} gera uma matriz com uma submatriz quadrada sendo a identidade. O tamanho da submatriz \'e $\min\{m,n\}$
+\end{itemize}
+
+\end{frame}
+
+\subsection[Fun\c{c}\~oes para Matrizes]{}
+\begin{frame}
+\frametitle{Fun\c{c}\~oes para Matrizes}
+
+As seguintes fun\c{c}\~oes para matrizes s\~ao bem \'uteis:
+{\scriptsize
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Comandos & Explica\c{c}\~ao \\ \hline
+{\tt det(A)} & Calcula o determinante da matriz A \\ \hline
+{\tt rank(A)} & Calcula o posto da matriz A \\ \hline
+{\tt inv(A)} & Calcula a inversa da matriz A \\ \hline
+{\tt rand(m,n)} & Gera uma matriz m por n onde os \\
+& elementos s\~ao n\'umeros aleat\'orios entre 0 e 1. \\ \hline
+{\tt norm(A,a)} & Calcula uma norma de v. a pode ser 1, 2, `inf' ou \\
+& `fro'. Pode-se omitir a, obtendo assim a norma 2. \\ \hline
+{\tt diag(A)} & Extrai a diagonal da matriz A, e p\~oe em um vetor. \\ \hline
+{\tt diag(v)} & Cria uma matriz diagonal, com o vetor v na diagonal. \\ \hline
+{\tt trace(A)} & Calcula o tra\c{c}o de A. \\ \hline
+{\tt [m,n] = size(A)} & Retorna o tamanho de A. \\ \hline
+
+\end{tabular}
+\end{center}}
+
+\pause
+
+O Maltab tamb\'em trabalha com matrizes esparsas. Para transformar uma matriz em uma matriz esparsa utilize {\tt sparse(A)}. Para mais informa\c{c}\~oes digite {\tt help sparse}.
+
+\end{frame}
+
+\section[Exerc\'icios]{}
+
+\begin{frame}[fragile]
+\frametitle{Exerc\'icios}
+
+\begin{enumerate}
+\item Crie um vetor aleat\'orio de 10 posi\c{c}\~oes. Calcule a norma desse vetor e o produto interno desse vetor com o vetor $e = (1,1,\dots,1)^T$.
+\item Crie um vetor aleat\'orio de 10 posi\c{c}\~oes. Calcule $$S = \sum_{i=1}^{10}\sin^2(v_i),$$ onde $v_i$ \'e o i-\'esimo elemento desse vetor.
+\item Cria uma matriz aleat\'oria 5 por 8. Extraia a submatriz 3 por 5 entre as colunas 3 e 7 e as linhas 2 e 4. Inclua uma linha nessa matriz, com os elementos 4,2,0,-2,-4, nessa ordem. Extraia a submatriz referente \`as \'ultimas 3 linhas e colunas dessa matriz. Calcule o determinante dessa submatriz.
+\end{enumerate}
+
+\end{frame}
+
+\end{document}
